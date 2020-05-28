@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color kWidgetColor = Color(0xFF574558);
+const Color kOrangeColor = Color(0xFFFE3411);
 
 class navigatebutton extends StatelessWidget {
   navigatebutton({this.text,this.route});
