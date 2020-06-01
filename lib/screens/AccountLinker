@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+import 'package:elderlyapp/constants.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+
+class AccountLinkerPage extends StatefulWidget {
+
+  static String id = 'AccountLinkerPage';
+  @override
+  _AccountLinkerPageState createState() => _AccountLinkerPageState();
+}
+
+class _AccountLinkerPageState extends State<AccountLinkerPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Image.asset('images/ComingSoon.jpg'),
+      ),
+    );
+  }
+}
+

@@ -8,6 +8,7 @@ import 'screens/schedulepage.dart';
 import 'constants.dart';
 import 'screens/reminderpage.dart';
 import 'screens/doctorappointment.dart';
+import 'package:elderlyapp/screens/AccountLinker';
 
 void main() {
   runApp(MyApp());
