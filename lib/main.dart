@@ -8,6 +8,8 @@ import 'screens/schedulepage.dart';
 import 'constants.dart';
 import 'screens/reminderpage.dart';
 import 'screens/doctorappointment.dart';
+import 'screens/contactsettings.dart';
+import 'screens/accountsettings.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         NotesPage.id:(context)=>NotesPage(),
         ReminderPage.id:(context)=>ReminderPage(),
         DoctorApptPage.id:(context)=>DoctorApptPage(),
+        ContactSettings.id:(context)=>ContactSettings(),
+        AccSetting.id:(context)=>AccSetting(),
       },
     );
   }
