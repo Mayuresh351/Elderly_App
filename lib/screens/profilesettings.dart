@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:elderlyapp/screens/AccountLinker';
-
 class ProfilePage extends StatefulWidget {
   static String id = 'ProfilePage';
   @override

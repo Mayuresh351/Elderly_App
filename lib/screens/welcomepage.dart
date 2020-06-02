@@ -13,11 +13,14 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          navigatebutton(text:'Home Page', route: HomePage.id),
-          navigatebutton(text:'Login Page', route: loginpage.id),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            navigatebutton(text:'Home Page', route: HomePage.id),
+            navigatebutton(text:'Login Page', route: LoginPage.id),
+          ],
+        ),
       ),
       );
   }

@@ -1,3 +1,4 @@
+import 'package:elderlyapp/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
 import 'package:elderlyapp/screens/homepage.dart';
@@ -8,7 +9,6 @@ import 'screens/schedulepage.dart';
 import 'constants.dart';
 import 'screens/reminderpage.dart';
 import 'screens/doctorappointment.dart';
-import 'package:elderlyapp/screens/AccountLinker';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         NotesPage.id:(context)=>NotesPage(),
         ReminderPage.id:(context)=>ReminderPage(),
         DoctorApptPage.id:(context)=>DoctorApptPage(),
+        LoginPage.id: (context) => LoginPage(),
       },
     );
   }
