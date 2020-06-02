@@ -1,3 +1,4 @@
+import 'package:elderlyapp/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
 import 'package:elderlyapp/screens/homepage.dart';
@@ -31,8 +32,12 @@ class MyApp extends StatelessWidget {
         NotesPage.id:(context)=>NotesPage(),
         ReminderPage.id:(context)=>ReminderPage(),
         DoctorApptPage.id:(context)=>DoctorApptPage(),
+<<<<<<< HEAD
         ContactSettings.id:(context)=>ContactSettings(),
         AccSetting.id:(context)=>AccSetting(),
+=======
+        LoginPage.id: (context) => LoginPage(),
+>>>>>>> 19d17d7b8e0727587797953aa966a38122764848
       },
     );
   }
