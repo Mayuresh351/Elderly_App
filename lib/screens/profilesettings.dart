@@ -4,11 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-<<<<<<< HEAD
-import 'package:auto_size_text/auto_size_text.dart';
 
-=======
->>>>>>> 19d17d7b8e0727587797953aa966a38122764848
 class ProfilePage extends StatefulWidget {
   static String id = 'ProfilePage';
   @override
@@ -68,12 +64,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           option: 'Contact Settings ',
                           route: ContactSettings.id,
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: size.height*0.03,
+                        ),
                         FlatButton(
                           onPressed: null,
                           child: Container(
-                            width: size.width * 0.4,
-                            height: size.height * 0.05,
+                            width: size.width * 0.7,
+                            height: size.height * 0.06,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadiusDirectional.circular(10.0),
                               color: Colors.red,
