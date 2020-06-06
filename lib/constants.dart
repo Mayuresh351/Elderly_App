@@ -81,16 +81,18 @@ class Options extends StatelessWidget {
                           child: Container(
                               height: size.height*0.04,
                               width:  size.width* 0.5,
-                              child: AutoSizeText(
-                                option,
-                                style:TextStyle(
-                                    fontFamily: 'Ubuntu',
-                                    color: kTextColor,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w500),
-                                maxFontSize: 30,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
+                              child: Center(
+                                child: AutoSizeText(
+                                  option,
+                                  style:TextStyle(
+                                      fontFamily: 'Ubuntu',
+                                      color: kTextColor,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w500),
+                                  maxFontSize: 30,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               )
                           ),
                         ),
@@ -124,12 +126,15 @@ class Options extends StatelessWidget {
 
 class Changedetails extends StatelessWidget {
 
-  Changedetails({this.icon,this.option,this.type,this.datatype});
+  Changedetails({this.icon,this.option,this.type,this.datatype,this.onsubmitted});
 
   IconData icon;
   String option;
   String type;
+  Function onsubmitted;
   TextInputType datatype;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -182,6 +187,7 @@ class Changedetails extends StatelessWidget {
                       onChanged: (value){
                         type = value;
                       },
+                      onSubmitted: onsubmitted,
                     ),
                   ),
                 ),
@@ -202,6 +208,8 @@ class Changedetails extends StatelessWidget {
     );
   }
 }
+
+
 
 
 
