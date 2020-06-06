@@ -4,11 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-<<<<<<< HEAD
 import 'package:auto_size_text/auto_size_text.dart';
 
-=======
->>>>>>> 19d17d7b8e0727587797953aa966a38122764848
 class ProfilePage extends StatefulWidget {
   static String id = 'ProfilePage';
   @override

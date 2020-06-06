@@ -15,60 +15,130 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 40),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              colors: [
-                Colors.purple[900],
-                Colors.purple[600],
-                Colors.purple[300],
-              ]
-          ),
-        ),
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(height: 150),
-              Text(
-                  'Login',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold
-                  )
-              ),
-              Divider(
-                height: 90.0,
-                color: Colors.orangeAccent,
-                thickness: 1,
-              ),
-              Text(
-                'Enter ID or email Address',
-                style: TextStyle(
-                  color: Colors.yellow,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+      resizeToAvoidBottomPadding: false,
+      body: Column(
+        children: <Widget>[
+          Container(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.fromLTRB(15.0, 110.0, 0, 0),
+                  child: Text('Hello',
+                    style: TextStyle(
+                      fontSize: 70.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(height: 40.0),
-              Text(
-                'Enter Password: ',
-                style: TextStyle(
-                  color: Colors.yellow,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                Container(
+                  padding: EdgeInsets.fromLTRB(18.0, 165.0, 0, 0),
+                  child: Text('There',
+                    style: TextStyle(
+                      fontSize: 70.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(height: 70),
-              navigatebutton(text: "Create Account"),
-            ],
+                Container(
+                  padding: EdgeInsets.fromLTRB(200.0, 165.0, 0, 0),
+                  child: Text('.....',
+                    style: TextStyle(
+                        fontSize: 70.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 300.0, left: 20.0, right: 20.0),
+                  child: Column(
+                    children: <Widget>[
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'EMAIL or USER ID:',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepPurple,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.deepOrange)
+                          ),
+                        ),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'PASSWORD:',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepPurple,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.deepOrange)
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Container(
+                        alignment: Alignment(1.0, 0.0),
+                        padding: EdgeInsets.only(top:5.0, right:0.0),
+                        child: InkWell(
+                          child: Text('Forgot Password',
+                            style: TextStyle(
+                              color: Colors.purpleAccent,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 30.0),
+                      Container(
+                        height: 40.0,
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20.0),
+                          shadowColor: Colors.deepPurple,
+                          color: Colors.purple,
+                          elevation: 7.0,
+                          child: GestureDetector(
+                            onTap: (){},
+                            child: Center(
+                              child: Text(
+                                'LOGIN',
+                                style: TextStyle(
+                                  color: Colors.yellowAccent,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'New to Elderly_App ?',
+                          ),
+                          SizedBox(width: 5.0),
+                          InkWell(
+                            onTap: () {},
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                color: Colors.purple,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
