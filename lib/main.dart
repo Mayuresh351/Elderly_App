@@ -1,3 +1,4 @@
+import 'package:elderlyapp/screens/SignUp_Page.dart';
 import 'package:elderlyapp/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         ContactSettings.id:(context)=>ContactSettings(),
         AccSetting.id:(context)=>AccSetting(),
         LoginPage.id: (context) => LoginPage(),
-
+        SignUpPage.id: (context) => SignUpPage(),
       },
     );
   }
