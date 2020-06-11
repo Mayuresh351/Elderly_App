@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:elderlyapp/components.dart';
 
 class ReminderPage extends StatefulWidget {
 
@@ -12,7 +13,13 @@ class _ReminderPageState extends State<ReminderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset('images/ComingSoon.jpg'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Image.asset('images/ComingSoon.jpg'),
+            BottomTabBar(),
+          ],
+        ),
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:elderlyapp/screens/reminderpage.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/rendering.dart';
+import 'package:elderlyapp/components.dart';
 
 class SchedulePage extends StatefulWidget {
   static String id = 'SchedulePage';
@@ -16,10 +17,11 @@ class _SchedulePageState extends State<SchedulePage> {
     return Scaffold(
       body:Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             navigatebutton(text: 'Reminders',route: ReminderPage.id,),
             navigatebutton(text: "Doctor's Appointments",route: DoctorApptPage.id,),
+            BottomTabBar(),
           ],
         ),
       ),

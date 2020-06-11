@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:elderlyapp/components.dart';
 
 class NotesPage extends StatefulWidget {
   static String id = 'NotesPage';
@@ -11,7 +12,13 @@ class _NotesPageState extends State<NotesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset('images/ComingSoon.jpg'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Image.asset('images/ComingSoon.jpg'),
+            BottomTabBar(),
+          ],
+        ),
       ),
     );
   }

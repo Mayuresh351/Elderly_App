@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                         fontSize: 70.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.purple
+                        color: kWidgetColor
                     ),
                   ),
                 ),
@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: 'EMAIL or USER ID:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: kWidgetColor,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.deepOrange)
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: 'PASSWORD:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: kWidgetColor,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.deepOrange)
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Material(
                           borderRadius: BorderRadius.circular(20.0),
                           shadowColor: Colors.deepPurple,
-                          color: Colors.purple,
+                          color: kWidgetColor,
                           elevation: 7.0,
                           child: GestureDetector(
                             onTap: (){},
@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                               child: Text(
                                 'LOGIN',
                                 style: TextStyle(
-                                  color: Colors.yellowAccent,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

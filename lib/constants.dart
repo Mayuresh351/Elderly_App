@@ -6,6 +6,10 @@ const Color kWidgetColor = Color(0xFF65376A);
 const Color kOrangeColor = Color(0xFFFF7C49);
 const Color kTextColor = Color(0xFF220C26);
 const Color kLightTextColor = Color(0xFFBCAEA8);
+const Color kWidgetColor2 = Color(0xFFCBB6AF);
+const Color kWidgetColor3 = Color(0xFFB56652);
+const Color kWidgetColorlite = Color(0xFF926496);
+int kChosenTab = 0;
 
 const kTextFieldDecoration = InputDecoration(
   contentPadding:
@@ -71,7 +75,7 @@ class Options extends StatelessWidget {
                         padding: const EdgeInsets.all(10.0),
                         child: Icon(
                           icon,
-                          color: kLightTextColor,
+                          color: kOrangeColor,
                           size: 50,
                         ),
                       ),
@@ -151,7 +155,7 @@ class Changedetails extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: Icon(
                     icon,
-                    color: kLightTextColor,
+                    color: kOrangeColor,
                     size: 50,
                   ),
                 ),
@@ -208,6 +212,42 @@ class Changedetails extends StatelessWidget {
     );
   }
 }
+
+class TabWidget extends StatelessWidget {
+  TabWidget({this.tabContent, this.tabIcon, this.ontap, this.color});
+  IconData tabIcon;
+  String tabContent;
+  Function ontap;
+  Color color;
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final orientation = MediaQuery.of(context).orientation;
+    return Material(
+      borderRadius: BorderRadiusDirectional.all(Radius.circular(5.0)),
+      color: color,
+      child: FlatButton(
+        child: Column(
+          children: <Widget>[
+            Icon(
+              tabIcon,
+              size: (orientation == Orientation.landscape)
+                  ? size.width * 0.03
+                  : size.height * 0.03,
+              color: Colors.white,
+            ),
+            Text(
+              tabContent,
+              style: TextStyle(fontFamily: 'Ubuntu', color: Colors.white),
+            ),
+          ],
+        ),
+        onPressed: ontap,
+      ),
+    );
+  }
+}
+
 
 
 
