@@ -95,3 +95,90 @@ class BottomTabBar extends StatelessWidget {
     );
   }
 }
+
+
+class BottomBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final orientation = MediaQuery.of(context).orientation;
+    return BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 6.0,
+        color: Colors.transparent,
+        elevation: 9.0,
+        clipBehavior: Clip.antiAlias,
+        child: Container(
+            height: 70.0,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.0),
+                    topRight: Radius.circular(25.0)
+                ),
+                color: Colors.white
+            ),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                      height: (orientation == Orientation.landscape)
+                          ? size.width * 0.08
+                          : size.height * 0.08,
+                      width: MediaQuery.of(context).size.width /2 - 40.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          TabWidget(
+                            tabIcon: Icons.home,
+                            tabContent: 'Home',
+                            ontap: () {
+                              Navigator.pushNamed(context, HomePage.id);
+                              kChosenTab = 0;
+                            },
+                            color: (kChosenTab == 0)?kWidgetColor:kTabColorLite,
+                          ),
+                          TabWidget(
+                            tabIcon: Icons.local_pharmacy,
+                            tabContent: 'Pharmacy',
+                            ontap: () {
+                              Navigator.pushNamed(context, MedicationPage.id);
+                              kChosenTab = 1;
+                            },
+                            color: (kChosenTab == 1)?kWidgetColor:kTabColorLite,
+                          ),
+                        ],
+                      )
+                  ),
+                  Container(
+                      height: 70.0,
+                      width: MediaQuery.of(context).size.width /2 - 40.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          TabWidget(
+                            tabIcon: Icons.alarm,
+                            tabContent: 'Alarm',
+                            ontap: () {
+                              Navigator.pushNamed(context, ReminderPage.id);
+                              kChosenTab = 2;
+                            },
+                            color: (kChosenTab == 2)?kWidgetColor:kTabColorLite,
+                          ),
+                          TabWidget(
+                            tabIcon: Icons.calendar_today,
+                            tabContent: 'Schedule',
+                            ontap: () {
+                              Navigator.pushNamed(context, SchedulePage.id);
+                              kChosenTab = 3;
+                            },
+                            color: (kChosenTab == 3)?kWidgetColor:kTabColorLite,
+                          ),
+                        ],
+                      )
+                  ),
+                ]
+            )
+        )
+    );
+  }
+}
