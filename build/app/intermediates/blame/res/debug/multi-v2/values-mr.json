@@ -1,9 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/saad/AndroidStudioProjects/elderly_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-mr/values-mr.xml",
+            "outputFile": "C:\\Users\\Mane\\AndroidStudioProjects\\Elderly_App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "/home/saad/.gradle/caches/transforms-2/files-2.1/0186a6a5de0989117b644bd422f2d6b6/jetified-play-services-basement-17.0.0/res/values-mr/values.xml",
                     "from": {
                         "startLines": "4",
@@ -39,6 +40,9 @@
                 },
                 {
                     "source": "/home/saad/.gradle/caches/transforms-2/files-2.1/765d948781557ca60ad60520b9d583b2/core-1.1.0/res/values-mr/values-mr.xml",
+=======
+                    "source": "C:\\Users\\Mane\\.gradle\\caches\\transforms-2\\files-2.1\\7faf2ad74a0b9932e38d86e684646e95\\core-1.0.0\\res\\values-mr\\values-mr.xml",
+>>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

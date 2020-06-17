@@ -1,9 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/saad/AndroidStudioProjects/elderly_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
+            "outputFile": "C:\\Users\\Mane\\AndroidStudioProjects\\Elderly_App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ko\\values-ko.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "/home/saad/.gradle/caches/transforms-2/files-2.1/3fc45067e5d4f81a347afb5bc6343590/play-services-base-17.1.0/res/values-ko/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -22,6 +23,9 @@
                 },
                 {
                     "source": "/home/saad/.gradle/caches/transforms-2/files-2.1/765d948781557ca60ad60520b9d583b2/core-1.1.0/res/values-ko/values-ko.xml",
+=======
+                    "source": "C:\\Users\\Mane\\.gradle\\caches\\transforms-2\\files-2.1\\7faf2ad74a0b9932e38d86e684646e95\\core-1.0.0\\res\\values-ko\\values-ko.xml",
+>>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 #Thu Jun 18 00:00:37 IST 2020
 path.2=classes3.dex
 path.1=classes2.dex
+=======
+#Wed Jun 17 23:34:31 IST 2020
+base.0=C\:\\Users\\Mane\\AndroidStudioProjects\\Elderly_App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+>>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
