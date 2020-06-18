@@ -17,14 +17,20 @@ class _SchedulePageState extends State<SchedulePage> {
     return Scaffold(
       body:Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             navigatebutton(text: 'Reminders',route: ReminderPage.id,),
             navigatebutton(text: "Doctor's Appointments",route: DoctorApptPage.id,),
-            BottomTabBar(),
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: kWidgetColor,
+        child: Icon(Icons.alarm),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

@@ -9,6 +9,7 @@ const Color kLightTextColor = Color(0xFFBCAEA8);
 const Color kWidgetColor2 = Color(0xFFCBB6AF);
 const Color kWidgetColor3 = Color(0xFFB56652);
 const Color kWidgetColorlite = Color(0xFF926496);
+const Color kTabColorLite = Color(0xFF676E79);
 int kChosenTab = 0;
 
 const kTextFieldDecoration = InputDecoration(
@@ -223,28 +224,25 @@ class TabWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final orientation = MediaQuery.of(context).orientation;
-    return Material(
-      borderRadius: BorderRadiusDirectional.all(Radius.circular(5.0)),
-      color: color,
-      child: FlatButton(
+    return GestureDetector(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
               tabIcon,
               size: (orientation == Orientation.landscape)
                   ? size.width * 0.03
                   : size.height * 0.03,
-              color: Colors.white,
+              color: color,
             ),
             Text(
               tabContent,
-              style: TextStyle(fontFamily: 'Ubuntu', color: Colors.white),
+              style: TextStyle(fontFamily: 'Ubuntu', color: color),
             ),
           ],
         ),
-        onPressed: ontap,
-      ),
-    );
+        onTap: ontap,
+      );
   }
 }
 

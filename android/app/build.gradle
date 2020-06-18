@@ -34,10 +34,12 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.saadhaashmi.elderlyapp"
-        minSdkVersion 16
-        targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        minSdkVersion 16
+        targetSdkVersion 28
+        multiDexEnabled true
+
     }
 
     buildTypes {
@@ -52,3 +54,10 @@ android {
 flutter {
     source '../..'
 }
+
+dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+}
+
+apply plugin: 'com.google.gms.google-services'

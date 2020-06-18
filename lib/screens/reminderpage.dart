@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/components.dart';
+import 'package:elderlyapp/constants.dart';
 
 class ReminderPage extends StatefulWidget {
 
@@ -14,13 +15,19 @@ class _ReminderPageState extends State<ReminderPage> {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('images/ComingSoon.jpg'),
-            BottomTabBar(),
+            Image.asset('images/ComingSoon.jpg')
           ],
         ),
       ),
+    floatingActionButton: FloatingActionButton(
+    onPressed: () {},
+    backgroundColor: kWidgetColor,
+    child: Icon(Icons.notifications_none),
+    ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "175647138957",
+    "firebase_url": "https://elderly-3be43.firebaseio.com",
+    "project_id": "elderly-3be43",
+    "storage_bucket": "elderly-3be43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175647138957:android:d782eab28ad97d4a0eaec4",
+        "android_client_info": {
+          "package_name": "com.saadhaashmi.elderlyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175647138957-vkgd8v1fqbd6geb893uang1o1vautjdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHbo-LgoqVEmwPhBWi-R2ZTdKYEEGHrYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175647138957-vkgd8v1fqbd6geb893uang1o1vautjdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,6 +9,9 @@ import 'package:elderlyapp/constants.dart';
 import 'package:flutter/rendering.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:elderlyapp/components.dart';
+double height;
+double width;
+var orient ;
 
 class HomePage extends StatefulWidget {
   static String id = 'HomePage';
@@ -36,8 +39,8 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       FlatButton(
                         child: Container(
-                          width: 120,
-                          height: 50,
+                          width:(orient == Orientation.landscape)?height*0.2:width*0.2,
+                          height:(orient == Orientation.landscape)?width*0.05:height*0.05,
                           color: Colors.green,
                           child: Center(
                             child: Text('Yes'),
@@ -50,8 +53,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       FlatButton(
                         child: Container(
-                          width: 120,
-                          height: 50,
+                          width: width*0.2,
+                          height: height*0.05,
                           color: Colors.red,
                           child: Center(
                             child: Text('No'),
@@ -75,6 +78,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final orientation = MediaQuery.of(context).orientation;
+    height = size.height;
+    width = size.width;
+    orient = orientation;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -108,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                FlatButton(
+                GestureDetector(
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                     child: Material(
@@ -116,8 +122,8 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadiusDirectional.all(Radius.circular(10)),
                       color: Colors.red,
                       child: Container(
-                        height: size.height*0.05,
-                        width: size.width*0.25,
+                        height: (orientation == Orientation.landscape)?size.width*0.05:size.height*0.05,
+                        width: (orientation == Orientation.landscape)?size.height*0.25:size.width*0.25,
                         child: Center(
                           child: Text(
                               'Emergency',
@@ -129,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  onPressed: () {
+                  onTap: () {
                     Emergency++;
                     if(Emergency > 5){
                       Emergency = 0;
@@ -142,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
                     child: Icon(
                       Icons.settings,
-                      size: size.height * 0.05,
+                      size: (orientation == Orientation.landscape)?size.width*0.05:size.height * 0.05,
                     ),
                   ),
                   onTap: () {
@@ -277,9 +283,15 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            BottomTabBar(),
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: kWidgetColor,
+          child: Icon(Icons.notifications_none),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: Hero(tag:'drawer',child: BottomBar()),
       ),
     );
   }

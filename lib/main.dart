@@ -11,6 +11,10 @@ import 'screens/reminderpage.dart';
 import 'screens/doctorappointment.dart';
 import 'screens/contactsettings.dart';
 import 'screens/accountsettings.dart';
+import 'screens/SignUp_Page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +39,7 @@ class MyApp extends StatelessWidget {
         ContactSettings.id:(context)=>ContactSettings(),
         AccSetting.id:(context)=>AccSetting(),
         LoginPage.id: (context) => LoginPage(),
-
+        SignUpPage.id: (context) => SignUpPage(),
       },
     );
   }
