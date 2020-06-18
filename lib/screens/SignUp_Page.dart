@@ -45,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: TextStyle(
                       fontSize: 50.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.purple,
+                      color: kWidgetColor,
                     ),
                   ),
                 ),
@@ -58,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           labelText: 'Enter Your Name:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: kWidgetColor,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.deepOrange)
@@ -71,7 +71,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           labelText: 'EMAIL Address:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: kWidgetColor,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.deepOrange)
@@ -84,7 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           labelText: 'PASSWORD:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: kWidgetColor,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.deepOrange)
@@ -97,7 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           labelText: 'LANGUAGE:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: kWidgetColor,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.deepOrange)
@@ -110,7 +110,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           labelText: 'Type:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: kWidgetColor,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.deepOrange)
@@ -123,7 +123,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: Material(
                           borderRadius: BorderRadius.circular(20.0),
                           shadowColor: Colors.deepPurple,
-                          color: Colors.purple,
+                          color: kWidgetColor,
                           elevation: 7.0,
                           child: GestureDetector(
                             onTap: (){},
@@ -131,7 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               child: Text(
                                 'Sign Up',
                                 style: TextStyle(
-                                  color: Colors.yellowAccent,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
