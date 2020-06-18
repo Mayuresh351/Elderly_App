@@ -23,39 +23,39 @@ class _SignUpPageState extends State<SignUpPage> {
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.fromLTRB(15.0, 110.0, 0, 0),
-                  child: Text('Hello',
+                  child: Text('Welcome to',
                     style: TextStyle(
-                      fontSize: 70.0,
+                      fontSize: 50.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(18.0, 165.0, 0, 0),
-                  child: Text('There',
+                  padding: EdgeInsets.fromLTRB(15.0, 160.0, 0, 0),
+                  child: Text('Elderly Help',
                     style: TextStyle(
-                      fontSize: 70.0,
+                      fontSize: 50.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(200.0, 165.0, 0, 0),
-                  child: Text('.....',
+                  padding: EdgeInsets.fromLTRB(295.0, 160.0, 0, 0),
+                  child: Text('!!!',
                     style: TextStyle(
-                        fontSize: 70.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.purple
+                      fontSize: 50.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 300.0, left: 20.0, right: 20.0),
+                  padding: EdgeInsets.only(top: 250.0, left: 20.0, right: 20.0),
                   child: Column(
                     children: <Widget>[
                       TextField(
                         decoration: InputDecoration(
-                          labelText: 'EMAIL or USER ID:',
+                          labelText: 'Enter Your Name:',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.deepPurple,
@@ -65,6 +65,20 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
+                      SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'EMAIL Address:',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepPurple,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.deepOrange)
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
                       TextField(
                         decoration: InputDecoration(
                           labelText: 'PASSWORD:',
@@ -77,16 +91,29 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Container(
-                        alignment: Alignment(1.0, 0.0),
-                        padding: EdgeInsets.only(top:5.0, right:0.0),
-                        child: InkWell(
-                          child: Text('Forgot Password',
-                            style: TextStyle(
-                              color: Colors.purpleAccent,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'LANGUAGE:',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepPurple,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.deepOrange)
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Type:',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepPurple,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.deepOrange)
                           ),
                         ),
                       ),
@@ -102,7 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             onTap: (){},
                             child: Center(
                               child: Text(
-                                'LOGIN',
+                                'Sign Up',
                                 style: TextStyle(
                                   color: Colors.yellowAccent,
                                   fontWeight: FontWeight.bold,
@@ -111,28 +138,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'New to Elderly_App ?',
-                          ),
-                          SizedBox(width: 5.0),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, SignUpPage.id);
-                            },
-                            child: Text(
-                              'Register',
-                              style: TextStyle(
-                                color: Colors.purple,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
                       ),
                     ],
                   ),

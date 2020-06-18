@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-#Thu Jun 18 00:00:37 IST 2020
+#Thu Jun 18 13:46:48 IST 2020
 path.2=classes3.dex
 path.1=classes2.dex
-=======
-#Wed Jun 17 23:34:31 IST 2020
-base.0=C\:\\Users\\Mane\\AndroidStudioProjects\\Elderly_App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/home/saad/AndroidStudioProjects/elderly_app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes3.dex
-base.1=/home/saad/AndroidStudioProjects/elderly_app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
-base.0=/home/saad/AndroidStudioProjects/elderly_app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+base.2=C\:\\Users\\Mane\\Desktop\\Elderly_App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes3.dex
+base.1=C\:\\Users\\Mane\\Desktop\\Elderly_App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
+base.0=C\:\\Users\\Mane\\Desktop\\Elderly_App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex

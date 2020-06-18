@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ContactSettings.id:(context)=>ContactSettings(),
         AccSetting.id:(context)=>AccSetting(),
         LoginPage.id: (context) => LoginPage(),
-        SignUpPage.id: (context) => SignUpPage(),
+        '/SignUpPage': (context) => SignUpPage(),
       },
     );
   }

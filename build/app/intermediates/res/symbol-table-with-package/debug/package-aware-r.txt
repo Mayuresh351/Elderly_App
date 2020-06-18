@@ -1,12 +1,9 @@
 com.saadhaashmi.elderlyapp
 attr alpha
-<<<<<<< HEAD
 attr buttonSize
 attr circleCrop
 attr colorScheme
-=======
 attr coordinatorLayoutStyle
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 attr font
 attr fontProviderAuthority
 attr fontProviderCerts
@@ -17,11 +14,8 @@ attr fontProviderQuery
 attr fontStyle
 attr fontVariationSettings
 attr fontWeight
-<<<<<<< HEAD
 attr imageAspectRatio
 attr imageAspectRatioAdjust
-attr scopeUris
-=======
 attr keylines
 attr layout_anchor
 attr layout_anchorGravity
@@ -29,8 +23,8 @@ attr layout_behavior
 attr layout_dodgeInsetEdges
 attr layout_insetEdge
 attr layout_keyline
+attr scopeUris
 attr statusBarBackground
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 attr ttcIndex
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
@@ -108,12 +102,9 @@ id action_divider
 id action_image
 id action_text
 id actions
-<<<<<<< HEAD
 id adjust_height
 id adjust_width
-=======
 id all
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 id async
 id auto
 id blocking
@@ -122,28 +113,21 @@ id center
 id center_horizontal
 id center_vertical
 id chronometer
-<<<<<<< HEAD
-id dark
-id dialog_button
-=======
 id clip_horizontal
 id clip_vertical
+id dark
 id end
 id fill
 id fill_horizontal
 id fill_vertical
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 id forever
 id icon
 id icon_group
 id icon_only
 id info
 id italic
-<<<<<<< HEAD
-id light
-=======
 id left
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
+id light
 id line1
 id line3
 id none
@@ -154,16 +138,8 @@ id notification_main_column_container
 id right
 id right_icon
 id right_side
-<<<<<<< HEAD
 id standard
-id tag_accessibility_actions
-id tag_accessibility_clickable_spans
-id tag_accessibility_heading
-id tag_accessibility_pane_title
-id tag_screen_reader_focusable
-=======
 id start
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -171,12 +147,9 @@ id text
 id text2
 id time
 id title
-<<<<<<< HEAD
+id top
 id wide
 integer google_play_services_version
-=======
-id top
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 integer status_bar_notification_info_maxnum
 layout notification_action
 layout notification_action_tombstone

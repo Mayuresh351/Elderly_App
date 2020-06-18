@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"ਚਾਲੂ ਕਰੋ"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ਕੰਮ ਨਹੀਂ ਕਰੇਗਾ ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ Google Play ਸੇਵਾਵਾਂ ਨੂੰ ਚਾਲੂ ਨਹੀਂ ਕਰਦੇ ਹੋ।"</string>
@@ -19,9 +18,5 @@
     <string msgid="5201977337835724196" name="common_open_on_phone">"ਫ਼ੋਨ \'ਤੇ ਖੋਲ੍ਹੋ"</string>
     <string msgid="3441753203274453993" name="common_signin_button_text">"ਸਾਈਨ-ਇਨ ਕਰੋ"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Google ਨਾਲ ਸਾਈਨ-ਇਨ ਕਰੋ"</string>
-    <string msgid="8106346172024741305" name="status_bar_notification_info_overflow">"999+"</string>
-=======
-<resources>
     <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
 </resources>

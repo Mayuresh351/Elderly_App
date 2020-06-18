@@ -1,14 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Mane\\AndroidStudioProjects\\Elderly_App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
+            "outputFile": "C:\\Users\\Mane\\Desktop\\Elderly_App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
             "map": [
                 {
-<<<<<<< HEAD
-                    "source": "/home/saad/.gradle/caches/transforms-2/files-2.1/765d948781557ca60ad60520b9d583b2/core-1.1.0/res/values-en-rCA/values-en-rCA.xml",
-=======
-                    "source": "C:\\Users\\Mane\\.gradle\\caches\\transforms-2\\files-2.1\\7faf2ad74a0b9932e38d86e684646e95\\core-1.0.0\\res\\values-en-rCA\\values-en-rCA.xml",
->>>>>>> 55783ec66656df3f26fa426975391e6fd5050279
+                    "source": "C:\\Users\\Mane\\.gradle\\caches\\transforms-2\\files-2.1\\e91dc08e955cc2e95069b0110f99683d\\core-1.0.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
