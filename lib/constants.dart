@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 
 const Color kWidgetColor = Color(0xFF65376A);
 const Color kOrangeColor = Color(0xFFFF7C49);
@@ -131,13 +133,14 @@ class Options extends StatelessWidget {
 
 class Changedetails extends StatelessWidget {
 
-  Changedetails({this.icon,this.option,this.type,this.datatype,this.onsubmitted});
+  Changedetails({this.icon,this.option,this.type,this.datatype,this.onsubmitted,this.onChanged});
 
   IconData icon;
   String option;
   String type;
   Function onsubmitted;
   TextInputType datatype;
+  Function onChanged;
 
 
 
@@ -189,9 +192,7 @@ class Changedetails extends StatelessWidget {
                       keyboardType: datatype,
                       controller: controller,
                       decoration: kTextFieldDecoration,
-                      onChanged: (value){
-                        type = value;
-                      },
+                      onChanged: onChanged,
                       onSubmitted: onsubmitted,
                     ),
                   ),
@@ -246,8 +247,99 @@ class TabWidget extends StatelessWidget {
   }
 }
 
+class Changedetails1 extends StatelessWidget {
+
+  Changedetails1({this.icon,this.option,this.type,this.datatype,this.onsubmitted,this.onChanged});
+
+  IconData icon;
+  String option;
+  DateTime type;
+  Function onsubmitted;
+  TextInputType datatype;
+  Function onChanged;
+  DateTime typedate;
 
 
-
-
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Icon(
+                    icon,
+                    color: kOrangeColor,
+                    size: 50,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Center(
+                    child: Container(
+                        height: size.height*0.04,
+                        width:  size.width* 0.3,
+                        child: Center(
+                          child: AutoSizeText(
+                            option,
+                            style:TextStyle(
+                                fontFamily: 'Ubuntu',
+                                color: kTextColor,
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.w500),
+                            maxFontSize: 30,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        )
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 10.0),
+                    child: InputDatePickerFormField(
+                        fieldLabelText: '',
+                        initialDate: type,
+                        labestyle:  TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: kWidgetColor,
+                        ),
+                        errorFormatText: 'Invalid Format Entered',
+                        errorInvalidText: 'Invalid Text Entered',
+                        firstDate: DateTime(1930,1,1),
+                        lastDate: DateTime.now(),
+                        onDateSubmitted: onChanged,
+                      ),
+//                    child: TextField(
+//                      keyboardType: datatype,
+//                      controller: controller,
+//                      decoration: kTextFieldDecoration,
+//                      onChanged: onChanged,
+//                      onSubmitted: onsubmitted,
+//                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Divider(
+                color: kLightTextColor,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
 

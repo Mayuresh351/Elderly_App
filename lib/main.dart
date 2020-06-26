@@ -15,6 +15,10 @@ import 'screens/SignUp_Page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'rootpage.dart';
+
+
+enum AuthStatus {notSignedIn,SignedIn}
 
 void main() {
   runApp(MyApp());
@@ -26,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: WelcomePage.id,
+      initialRoute: RootPage.id,
       routes: {
         WelcomePage.id:(context)=>WelcomePage(),
         HomePage.id:(context)=>HomePage(),
@@ -39,7 +43,8 @@ class MyApp extends StatelessWidget {
         ContactSettings.id:(context)=>ContactSettings(),
         AccSetting.id:(context)=>AccSetting(),
         LoginPage.id: (context) => LoginPage(),
-        '/SignUpPage': (context) => SignUpPage(),
+        SignUpPage.id: (context) => SignUpPage(),
+        RootPage.id:(context) => RootPage(),
       },
     );
   }

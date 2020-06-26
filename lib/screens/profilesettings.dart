@@ -1,18 +1,30 @@
 import 'package:elderlyapp/screens/accountsettings.dart';
 import 'package:elderlyapp/screens/contactsettings.dart';
+import 'package:elderlyapp/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:elderlyapp/rootpage.dart';
+import 'package:elderlyapp/data/userdata.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+enum AuthStatus {notSignedIn,SignedIn}
 
 class ProfilePage extends StatefulWidget {
+  ProfilePage({this.onSignedOut});
+  final VoidCallback onSignedOut;
   static String id = 'ProfilePage';
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
+  UserData user = UserData();
+  final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -69,7 +81,12 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: size.height*0.03,
                         ),
                         FlatButton(
-                          onPressed: null,
+                          onPressed:()async{
+                            AuthStatus auth = AuthStatus.notSignedIn;
+                            await user.Signout();
+                            UserData.signout = true;
+                            Navigator.popUntil(context, ModalRoute.withName(RootPage.id));
+                          },
                           child: Container(
                             width: size.width * 0.7,
                             height: size.height * 0.06,

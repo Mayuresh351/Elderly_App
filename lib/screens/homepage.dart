@@ -1,3 +1,4 @@
+import 'package:elderlyapp/data/userdata.dart';
 import 'package:elderlyapp/screens/accountsettings.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
 import 'package:elderlyapp/screens/medicationpage.dart';
@@ -14,6 +15,11 @@ double width;
 var orient ;
 
 class HomePage extends StatefulWidget {
+  HomePage({this.onSignedOut1});
+
+  final UserData user = UserData();
+
+  final VoidCallback onSignedOut1;
   static String id = 'HomePage';
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,6 +27,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int Emergency = 0;
+  String email;
+
+  void onSignedOut(){
+    widget.onSignedOut1();
+  }
+
   Future<void> showMyDialog()async{
     return showDialog<void>(
       context: context,
@@ -75,6 +87,20 @@ class _HomePageState extends State<HomePage> {
     );
   }
   @override
+  void initState() {
+    super.initState();
+    print(UserData.signout);
+    widget.user.currentUser().then((value) {
+      if(value == null){
+        onSignedOut();
+      }
+      email = value.email;
+      if(UserData.signout == true){
+        UserData.signout = false;
+        onSignedOut();
+      }
+    });
+  }
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final orientation = MediaQuery.of(context).orientation;
@@ -101,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 15.0, vertical: 15.0),
                     child: AutoSizeText(
-                      'Hey Mayuresh ,',
+                      'Hey $email ,',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           fontFamily: 'Ubuntu',
@@ -169,8 +195,9 @@ class _HomePageState extends State<HomePage> {
                             : size.height * 0.35,
                         width: size.width * 0.9,
                         child: Material(
-                          elevation: 5.0,
-                          color: kOrangeColor,
+                          elevation: 10.0,
+                          shadowColor: kOrangeColor,
+                          color:Colors.white,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(25.0),
                             topLeft: Radius.circular(25.0),
@@ -186,7 +213,7 @@ class _HomePageState extends State<HomePage> {
                                   "Doctor's Notes",
                                   style: TextStyle(
                                       fontFamily: 'Ubuntu',
-                                      color: Colors.white,
+                                      color: kTextColor,
                                       fontSize: size.height * 0.02,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -209,8 +236,9 @@ class _HomePageState extends State<HomePage> {
                             : size.height * 0.20,
                         width: size.width * 0.9,
                         child: Material(
-                          elevation: 5.0,
-                          color: kWidgetColor3,
+                          elevation: 10.0,
+                          shadowColor: kOrangeColor,
+                          color:Colors.white,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(25.0),
                             topLeft: Radius.circular(25.0),
@@ -226,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                   "Next Medications",
                                   style: TextStyle(
                                       fontFamily: 'Ubuntu',
-                                      color: Colors.white,
+                                      color: kTextColor,
                                       fontSize: size.height * 0.02,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -249,8 +277,9 @@ class _HomePageState extends State<HomePage> {
                             : size.height * 0.15,
                         width: size.width * 0.9,
                         child: Material(
-                          elevation: 5.0,
-                          color: kWidgetColor2,
+                          elevation: 10.0,
+                          shadowColor: kOrangeColor,
+                          color:Colors.white,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(25.0),
                             topLeft: Radius.circular(25.0),
@@ -266,7 +295,7 @@ class _HomePageState extends State<HomePage> {
                                   "Next Appointment ",
                                   style: TextStyle(
                                       fontFamily: 'Ubuntu',
-                                      color: Colors.white,
+                                      color: kTextColor,
                                       fontSize: size.height * 0.02,
                                       fontWeight: FontWeight.w500),
                                 ),
