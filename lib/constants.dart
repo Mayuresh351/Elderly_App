@@ -306,10 +306,10 @@ class Changedetails1 extends StatelessWidget {
                     child: InputDatePickerFormField(
                         fieldLabelText: '',
                         initialDate: type,
-                        labestyle:  TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: kWidgetColor,
-                        ),
+                       // labestyle:  TextStyle(
+                         // fontWeight: FontWeight.bold,
+                         // color: kWidgetColor,
+                        //),
                         errorFormatText: 'Invalid Format Entered',
                         errorInvalidText: 'Invalid Text Entered',
                         firstDate: DateTime(1930,1,1),

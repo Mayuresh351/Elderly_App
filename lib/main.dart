@@ -44,10 +44,8 @@ class MyApp extends StatelessWidget {
         AccSetting.id:(context)=>AccSetting(),
         LoginPage.id: (context) => LoginPage(),
         SignUpPage.id: (context) => SignUpPage(),
-<<<<<<< HEAD
         RootPage.id:(context) => RootPage(),
-=======
->>>>>>> 433e63b9fb36626a5deddf39b2c2417df26fa65d
+
       },
     );
   }

@@ -244,10 +244,10 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           InputDatePickerFormField(
                             fieldLabelText: 'Enter Birthday',
-                            labestyle:  TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: kWidgetColor,
-                            ),
+                           // labestyle:  TextStyle(
+                             // fontWeight: FontWeight.bold,
+                              //color: kWidgetColor,
+                            //),
                             errorFormatText: 'Invalid Format Entered',
                             errorInvalidText: 'Invalid Text Entered',
                             onDateSubmitted: (value){
