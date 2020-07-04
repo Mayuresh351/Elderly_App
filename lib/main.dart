@@ -16,6 +16,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'rootpage.dart';
+import 'screens/suscess_screen.dart';
+import 'screens/prescriptions.dart';
 
 
 enum AuthStatus {notSignedIn,SignedIn}
@@ -38,14 +40,15 @@ class MyApp extends StatelessWidget {
         SchedulePage.id:(context)=>SchedulePage(),
         ProfilePage.id:(context)=>ProfilePage(),
         NotesPage.id:(context)=>NotesPage(),
-        ReminderPage.id:(context)=>ReminderPage(),
+        MedicineReminder.id:(context)=>MedicineReminder(),
         DoctorApptPage.id:(context)=>DoctorApptPage(),
         ContactSettings.id:(context)=>ContactSettings(),
         AccSetting.id:(context)=>AccSetting(),
         LoginPage.id: (context) => LoginPage(),
         SignUpPage.id: (context) => SignUpPage(),
         RootPage.id:(context) => RootPage(),
-
+        SuccessScreenDetails.id:(context) => SuccessScreenDetails(),
+        ImageScreen.id:(context) => ImageScreen(),
       },
     );
   }

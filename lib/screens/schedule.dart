@@ -1,9 +1,6 @@
 import 'package:elderlyapp/screens/reminderpage.dart';
 import 'package:flutter/material.dart';
 
-
-
-
 void main() {
   runApp(MedicineReminder());
 }
@@ -28,7 +25,7 @@ class _MedicineReminderState extends State<MedicineReminder> {
           primarySwatch: Colors.purple,
           brightness: Brightness.light,
         ),
-        home: ReminderPage(),
+        home: MedicineReminder(),
         debugShowCheckedModeBanner: false,
       );
 

@@ -19,7 +19,7 @@ class _SchedulePageState extends State<SchedulePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            navigatebutton(text: 'Reminders',route: ReminderPage.id,),
+            navigatebutton(text: 'Reminders',route: MedicineReminder.id,),
             navigatebutton(text: "Doctor's Appointments",route: DoctorApptPage.id,),
           ],
         ),

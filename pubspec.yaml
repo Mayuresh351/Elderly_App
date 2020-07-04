@@ -37,6 +37,21 @@ dependencies:
   flutter_cupertino_date_picker: ^1.0.26+2
   table_calendar: ^2.2.3
   rxdart: ^0.24.1
+#  firebase_storage: ^3.1.6
+  image_picker: ^0.6.7+2
+  firebase_storage:
+    git:
+      url: git://github.com/danysz/flutterfire.git
+      ref: master
+      path: packages/firebase_storage
+  shared_preferences: 0.5.2
+#  flutter_local_notifications: ^1.4.4+1
+  flutter_local_notifications:
+  flare_flutter:
+    git:
+      url: git://github.com/2d-inc/Flare-Flutter.git
+      ref: dev
+      path: flare_flutter
 
 
 dev_dependencies:
@@ -56,13 +71,21 @@ flutter:
 
 
   assets:
-   - images/
+    - assets/images/
+    - assets/animations/
+    - assets/sound/
 
   fonts:
     - family: Ubuntu
       fonts:
-        - asset: fonts/Ubuntu-Regular.ttf
-        - asset: fonts/Ubuntu-Medium.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Regular.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Medium.ttf
+    - family: Ic
+      fonts:
+        - asset: assets/fonts/ic/ic_medicine.ttf
+    - family: Angel
+      fonts:
+        - asset: assets/fonts/neu/Angel Signature.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

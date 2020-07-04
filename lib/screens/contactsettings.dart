@@ -15,6 +15,8 @@ class _ContactSettingsState extends State<ContactSettings> {
   String Pharmacy_Contact;
   bool showSpinner = false;
   int call = 0;
+  bool downloaded = false;
+  String downloadURL;
   var user = UserData();
 
   void yoyo() async {
@@ -29,11 +31,22 @@ class _ContactSettingsState extends State<ContactSettings> {
      call++;
    }
   }
-
+  Future downloadIt1()async {
+    if (downloaded == false) {
+      downloadURL = await user.downloadIt();
+      setState(() {
+        downloaded = true;
+      });
+    }
+  }
   @override
+  void initState(){
+    super.initState();
+    yoyo();
+    downloadIt1().then((value) => null);
+  }
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    yoyo();
     return ModalProgressHUD(
       inAsyncCall: showSpinner,
       child: Scaffold(
@@ -51,12 +64,28 @@ class _ContactSettingsState extends State<ContactSettings> {
                     padding: EdgeInsets.all(20.0),
                     child: Hero(
                       tag: 'Avatar',
-                      child: CircleAvatar(
-                        radius: (MediaQuery.of(context).orientation ==
-                                Orientation.portrait)
-                            ? size.height * 0.06
-                            : size.width * 0.05,
-                        backgroundImage: AssetImage('images/accpro.png'),
+                      child: ClipOval(
+                        child: (downloaded == true )?new SizedBox(
+                          height: (MediaQuery.of(context).orientation ==
+                              Orientation.portrait)
+                              ? size.height * 0.12
+                              : size.width * 0.10,
+                          width: (MediaQuery.of(context).orientation ==
+                              Orientation.portrait)
+                              ? size.height * 0.12
+                              : size.width * 0.10,
+                          child: Image.network(downloadURL,fit: BoxFit.cover,),
+                        ):new SizedBox(
+                          height: (MediaQuery.of(context).orientation ==
+                              Orientation.portrait)
+                              ? size.height * 0.12
+                              : size.width * 0.10,
+                          width: (MediaQuery.of(context).orientation ==
+                              Orientation.portrait)
+                              ? size.height * 0.12
+                              : size.width * 0.10,
+                          child: Image.asset('images/accpro.png',fit: BoxFit.cover,),
+                        ),
                       ),
                     ),
                   ),
@@ -72,7 +101,7 @@ class _ContactSettingsState extends State<ContactSettings> {
                         topLeft: Radius.circular(25.0)),
                     child: Container(
                       height: size.height * 0.60,
-                      child: Column(
+                      child: ListView(
                         children: <Widget>[
                           Changedetails(
                             icon: Icons.link,
@@ -109,6 +138,7 @@ class _ContactSettingsState extends State<ContactSettings> {
                               final status = await user.updateContactSettings(User_contact, Emergency_Contact, Pharmacy_Contact);
                               if(status != null){
                                 setState(() {
+//                                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('User Details Updated!!'),));
                                   showSpinner = false;
                                 });
                               }

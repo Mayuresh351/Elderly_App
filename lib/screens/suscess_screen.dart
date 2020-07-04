@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 class SuccessScreenDetails extends StatefulWidget {
+  static String id = 'SuccessPage';
   @override
   _SuccessScreenDetailsState createState() => _SuccessScreenDetailsState();
 }

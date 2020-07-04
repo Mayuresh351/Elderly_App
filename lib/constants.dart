@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
+import 'dart:typed_data';
 
 const Color kWidgetColor = Color(0xFF65376A);
 const Color kOrangeColor = Color(0xFFFF7C49);
@@ -13,6 +14,11 @@ const Color kWidgetColor3 = Color(0xFFB56652);
 const Color kWidgetColorlite = Color(0xFF926496);
 const Color kTabColorLite = Color(0xFF676E79);
 int kChosenTab = 0;
+int count = 0;
+int count2 = 0;
+List<dynamic> imgList = [];
+Map<int,Uint8List> imageData = {};
+List<int>  requestedindexes = [];
 
 const kTextFieldDecoration = InputDecoration(
   contentPadding:
@@ -306,10 +312,6 @@ class Changedetails1 extends StatelessWidget {
                     child: InputDatePickerFormField(
                         fieldLabelText: '',
                         initialDate: type,
-                       // labestyle:  TextStyle(
-                         // fontWeight: FontWeight.bold,
-                         // color: kWidgetColor,
-                        //),
                         errorFormatText: 'Invalid Format Entered',
                         errorInvalidText: 'Invalid Text Entered',
                         firstDate: DateTime(1930,1,1),
@@ -342,4 +344,3 @@ class Changedetails1 extends StatelessWidget {
     );
   }
 }
-

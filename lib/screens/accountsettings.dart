@@ -1,12 +1,16 @@
 import 'package:elderlyapp/constants.dart';
 import 'package:elderlyapp/screens/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/painting.dart';
 import 'package:elderlyapp/data/userdata.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'dart:io';
+import 'package:path/path.dart';
 
 
 
@@ -30,82 +34,86 @@ class _AccSettingState extends State<AccSetting> {
   bool invalid = null;
   int call = 0;
   Timestamp birth;
+  File image;
+//  StorageReference firebaseStorageRef = FirebaseStorage.instance.ref();
+  String downloadURL;
+  bool downloaded = false;
 
 
-  Future<void> showMyDialog() async {
-    String Newpass1;
-    String Newpass2;
-    print(autherror);
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return StatefulBuilder(
-          builder: (context, setState){
-            return AlertDialog(
-              title: Text('Change Password'),
-              content: SingleChildScrollView(
-                child: ListBody(
-                  children: <Widget>[
-                    Text('Enter New Password :'),
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: TextField(
-                        decoration: kTextFieldDecoration,
-                        onChanged: (value){
-                          Newpass1 = value;
-                        },
-                      ),
-                    ),
-                    Text('Confirm Password :'),
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: TextField(
-                        decoration: kTextFieldDecoration,
-                        onChanged: (value){
-                          Newpass2 = value;
-                        },
-                      ),
-                    ),
-                    Text(
-                      autherror == false ? '':'Password Do not match',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.red,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              actions: <Widget>[
-                FlatButton(
-                  child: Container(
-                    child: Text('Change Password',style: TextStyle(fontSize: 20),),
-                  ),
-                  onPressed: () {
-                    if(Newpass1 != Newpass2){
-                      setState(() {
-                        autherror = true;
-                        print('setstate');
-                        print(autherror);
-                      });
-                      print('password not matching');
-                    }
-                    else {
-                      Navigator.of(context).pop();
-                      password = Newpass2;
-                    }
-                  },
-                ),
-              ],
-            );
-          },
-        );
-      },
-    );
-  }
+//  Future<void> showMyDialog() async {
+//    String Newpass1;
+//    String Newpass2;
+//    print(autherror);
+//    return showDialog<void>(
+//      context: context,
+//      barrierDismissible: false, // user must tap button!
+//      builder: (BuildContext context) {
+//        return StatefulBuilder(
+//          builder: (context, setState){
+//            return AlertDialog(
+//              title: Text('Change Password'),
+//              content: SingleChildScrollView(
+//                child: ListBody(
+//                  children: <Widget>[
+//                    Text('Enter New Password :'),
+//                    Padding(
+//                      padding: EdgeInsets.all(10.0),
+//                      child: TextField(
+//                        decoration: kTextFieldDecoration,
+//                        onChanged: (value){
+//                          Newpass1 = value;
+//                        },
+//                      ),
+//                    ),
+//                    Text('Confirm Password :'),
+//                    Padding(
+//                      padding: EdgeInsets.all(10.0),
+//                      child: TextField(
+//                        decoration: kTextFieldDecoration,
+//                        onChanged: (value){
+//                          Newpass2 = value;
+//                        },
+//                      ),
+//                    ),
+//                    Text(
+//                      autherror == false ? '':'Password Do not match',
+//                      textAlign: TextAlign.center,
+//                      style: TextStyle(
+//                        fontSize: 18.0,
+//                        color: Colors.red,
+//                      ),
+//                    ),
+//                  ],
+//                ),
+//              ),
+//
+//              actions: <Widget>[
+//                FlatButton(
+//                  child: Container(
+//                    child: Text('Change Password',style: TextStyle(fontSize: 20),),
+//                  ),
+//                  onPressed: () {
+//                    if(Newpass1 != Newpass2){
+//                      setState(() {
+//                        autherror = true;
+//                        print('setstate');
+//                        print(autherror);
+//                      });
+//                      print('password not matching');
+//                    }
+//                    else {
+//                      Navigator.of(context).pop();
+//                      password = Newpass2;
+//                    }
+//                  },
+//                ),
+//              ],
+//            );
+//          },
+//        );
+//      },
+//    );
+//  }
 //  Future showAlert(){
 //    return showDialog<void>(
 //      context: context,
@@ -191,12 +199,57 @@ class _AccSettingState extends State<AccSetting> {
       call++;
     }
   }
-  @override
+  Future downloadIt() async{
+    if(downloaded == false){
+      String filename;
+      await user.currentUser().then((value){
+        filename = value.uid;
+      });
+      StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child('$filename.png');
+      String downloadAddress = await firebaseStorageRef.getDownloadURL();
+      setState(() {
+        downloadURL = downloadAddress;
+        print(downloadAddress);
+        downloaded = true;
+      });
+    }
+  }
 
+  @override
+  void initState(){
+    super.initState();
+    yoyo();
+  }
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final orientation = MediaQuery.of(context).orientation;
-    yoyo();
+
+    Future getImage()async{
+      var NewImage =  await ImagePicker.pickImage(source: ImageSource.gallery);
+      print(NewImage);
+
+      setState(() {
+        try{
+          image = NewImage;
+        }catch(e){
+          print(e);
+        }
+      });
+    }
+    Future uploadIt()async{
+      String filename;
+      await user.currentUser().then((value){
+        filename = value.uid;
+      });
+      StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child('$filename.png');
+      StorageUploadTask uploadTask = firebaseStorageRef.putFile(image);
+      StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
+      setState(() {
+        downloaded = false;
+      });
+    }
+    downloadIt().then((value) => null);
     return ModalProgressHUD(
       inAsyncCall: showSpinner,
       child: Scaffold(
@@ -208,22 +261,58 @@ class _AccSettingState extends State<AccSetting> {
         body: Center(
           child: Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Hero(
-                      tag: 'Avatar',
-                      child: CircleAvatar(
-                        radius: (MediaQuery.of(context).orientation ==
-                                Orientation.portrait)
-                            ? size.height * 0.06
-                            : size.width * 0.05,
-                        backgroundImage: AssetImage('images/accpro.png'),
+              Container(
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Hero(
+                          tag: 'Avatar',
+                          child: ClipOval(
+                            child: (downloaded == true && image == null)?new SizedBox(
+                              height: (MediaQuery.of(context).orientation ==
+                                  Orientation.portrait)
+                                  ? size.height * 0.12
+                                  : size.width * 0.10,
+                              width: (MediaQuery.of(context).orientation ==
+                                  Orientation.portrait)
+                                  ? size.height * 0.12
+                                  : size.width * 0.10,
+                              child: Image.network(downloadURL,fit: BoxFit.cover,),
+                            ):new SizedBox(
+                          height: (MediaQuery.of(context).orientation ==
+                              Orientation.portrait)
+                            ? size.height * 0.12
+                            : size.width * 0.10,
+                        width: (MediaQuery.of(context).orientation ==
+                            Orientation.portrait)
+                            ? size.height * 0.12
+                            : size.width * 0.10,
+                        child: (image != null)?Image.file(image,fit: BoxFit.cover,):Image.asset('images/accpro.png',fit: BoxFit.cover,),
+                      ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    Positioned(
+                      top: (orientation == Orientation.landscape)?size.width*0.10:size.height*0.12,
+                      left: (orientation == Orientation.landscape)?size.width*0.10:size.height*0.12,
+                      child: GestureDetector(
+                        child: Icon(
+                          Icons.edit,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        onTap: (){
+                          getImage();
+
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Expanded(
                 child: Hero(
@@ -267,7 +356,7 @@ class _AccSettingState extends State<AccSetting> {
                             icon: Icons.cake,
                             option: 'Birth Date',
                             type: birthday,
-                            onChanged: (value){
+                            onsubmitted: (value){
                               print(value);
                               birthday = value;
                               print(birthday);
@@ -348,6 +437,8 @@ class _AccSettingState extends State<AccSetting> {
                               setState(() {
                                 showSpinner = true;
                               });
+                              await uploadIt();
+                              await downloadIt();
                               final status = await user.updateAccSettings(username,birthday);
                               if(status != null){
                                 setState(() {

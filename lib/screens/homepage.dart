@@ -28,7 +28,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int Emergency = 0;
   String email;
-
   void onSignedOut(){
     widget.onSignedOut1();
   }
@@ -101,7 +100,22 @@ class _HomePageState extends State<HomePage> {
       }
     });
   }
+  void checkEmail()async{
+    await widget.user.currentUser().then((value) {
+      setState(() {
+        if(value == null){
+          onSignedOut();
+        }
+        email = value.email;
+        if(UserData.signout == true){
+          UserData.signout = false;
+          onSignedOut();
+        }
+      });
+      });
+  }
   Widget build(BuildContext context) {
+    checkEmail();
     final size = MediaQuery.of(context).size;
     final orientation = MediaQuery.of(context).orientation;
     height = size.height;
@@ -320,7 +334,7 @@ class _HomePageState extends State<HomePage> {
           child: Icon(Icons.notifications_none),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: Hero(tag:'drawer',child: BottomBar()),
+        bottomNavigationBar: BottomBar(),
       ),
     );
   }

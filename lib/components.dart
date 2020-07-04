@@ -9,6 +9,7 @@ import 'package:elderlyapp/constants.dart';
 import 'package:flutter/rendering.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'screens/homepage.dart';
+import 'screens/prescriptions.dart';
 
 class BottomTabBar extends StatelessWidget {
   @override
@@ -52,7 +53,7 @@ class BottomTabBar extends StatelessWidget {
                     tabIcon: Icons.alarm,
                     tabContent: 'Alarm',
                     ontap: () {
-                      Navigator.pushNamed(context, ReminderPage.id);
+                      Navigator.pushNamed(context, MedicineReminder.id);
                       kChosenTab = 1;
                     },
                     color: (kChosenTab == 1)?kWidgetColorlite:kWidgetColor,
@@ -141,7 +142,7 @@ class BottomBar extends StatelessWidget {
                             tabIcon: Icons.local_pharmacy,
                             tabContent: 'Pharmacy',
                             ontap: () {
-                              Navigator.pushNamed(context, MedicationPage.id);
+                              Navigator.pushNamed(context,ImageScreen.id);
                               kChosenTab = 1;
                             },
                             color: (kChosenTab == 1)?kWidgetColor:kTabColorLite,
@@ -159,7 +160,7 @@ class BottomBar extends StatelessWidget {
                             tabIcon: Icons.alarm,
                             tabContent: 'Alarm',
                             ontap: () {
-                              Navigator.pushNamed(context, ReminderPage.id);
+                              Navigator.pushNamed(context, MedicineReminder.id);
                               kChosenTab = 2;
                             },
                             color: (kChosenTab == 2)?kWidgetColor:kTabColorLite,

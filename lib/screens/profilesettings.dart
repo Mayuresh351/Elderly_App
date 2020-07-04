@@ -24,10 +24,22 @@ class _ProfilePageState extends State<ProfilePage> {
 
   UserData user = UserData();
   final _auth = FirebaseAuth.instance;
+  bool downloaded = false;
+  String downloadURL;
 
   @override
+  Future downloadIt1()async{
+    if(downloaded == false){
+      downloadURL = await user.downloadIt();
+      setState(() {
+        downloaded = true;
+      });
+    }
+  }
+
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    downloadIt1().then((value) => null);
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
@@ -42,9 +54,28 @@ class _ProfilePageState extends State<ProfilePage> {
               padding: EdgeInsets.all(20.0),
               child: Hero(
                 tag: 'Avatar',
-                child: CircleAvatar(
-                  radius: size.height * 0.1,
-                  backgroundImage: AssetImage('images/accpro.png'),
+                child: ClipOval(
+                  child: (downloaded == true )?new SizedBox(
+                    height: (MediaQuery.of(context).orientation ==
+                        Orientation.portrait)
+                        ? size.height * 0.12
+                        : size.width * 0.10,
+                    width: (MediaQuery.of(context).orientation ==
+                        Orientation.portrait)
+                        ? size.height * 0.12
+                        : size.width * 0.10,
+                    child: Image.network(downloadURL,fit: BoxFit.cover,),
+                  ):new SizedBox(
+                    height: (MediaQuery.of(context).orientation ==
+                        Orientation.portrait)
+                        ? size.height * 0.12
+                        : size.width * 0.10,
+                    width: (MediaQuery.of(context).orientation ==
+                        Orientation.portrait)
+                        ? size.height * 0.12
+                        : size.width * 0.10,
+                    child: Image.asset('images/accpro.png',fit: BoxFit.cover,),
+                  ),
                 ),
               ),
             ),

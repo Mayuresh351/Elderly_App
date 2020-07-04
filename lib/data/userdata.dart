@@ -1,8 +1,11 @@
-
+import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:elderlyapp/screens/suscess_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:elderlyapp/constants.dart';
 
 class UserData{
 
@@ -48,6 +51,7 @@ class UserData{
   Future updateData(String Name, String language,String type,DateTime birthday)async{
     final user = await FirebaseAuth.instance.currentUser();
     print(user.uid);
+    List<String> imglist = ['base'];
     Timestamp birth = Timestamp.fromDate(birthday);
     print(birth);
     final CollectionReference Collection = Firestore.instance.collection('Userdata');
@@ -59,6 +63,9 @@ class UserData{
       'Emergency' : '',
       'Pharmacy' : '',
       'Birthday' : birth,
+      'Images Uploaded' : 0,
+      'Image List': imglist,
+      'Image Count': 0,
     });
 
 //  return Firestore.instance.collection('Userdata').add({
@@ -124,4 +131,70 @@ class UserData{
       return null;
     }
   }
+  Future<String> downloadIt()async{
+      String filename;
+      await currentUser().then((value){
+        filename = value.uid;
+      });
+      StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child('$filename.png');
+      String downloadAddress = await firebaseStorageRef.getDownloadURL();
+      return downloadAddress;
+  }
+  Future<int> getImageNo()async{
+    try{
+      final user = await FirebaseAuth.instance.currentUser();
+      List<String> icc = [];
+      print(user.uid);
+      final CollectionReference Collection = await Firestore.instance.collection('Userdata');
+      await Collection.document(user.uid).get().then((value){
+        count = value.data['Images Uploaded'];
+        count2 = value.data['Image Count'];
+        print(count);
+        print('yoooo');
+      });
+      return count;
+    }catch(e){
+      return null;
+    }
+  }
+  Future<List<dynamic>> getImageList()async{
+    try{
+      final user = await FirebaseAuth.instance.currentUser();
+      List<dynamic> imglist = [];
+      print(user.uid);
+      final CollectionReference Collection = await Firestore.instance.collection('Userdata');
+      await Collection.document(user.uid).get().then((value){
+        imglist = value.data['Image List'];
+        print('no upp');
+        print(imglist);
+        print('yoooo');
+      });
+      return imglist;
+    }catch(e){
+      print(e);
+      return [];
+    }
+  }
+  Future updateImage(bool upload)async {
+    try {
+      print(count);
+      if(upload == true){
+        count++;
+        count2++;
+      }else{
+        count--;
+      }
+      var user = await FirebaseAuth.instance.currentUser();
+      final CollectionReference Collection = await Firestore.instance
+          .collection('Userdata');
+      await Collection.document(user.uid).updateData(
+          {'Images Uploaded': count,'Image List': imgList,'Image Count' : count2});
+      getImageNo();
+      return 1;
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
 }
+
