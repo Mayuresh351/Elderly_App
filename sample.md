@@ -21,4 +21,4 @@ This is a flutter Application developed to help elders regarding their medical d
 
 * DRIVE LINK:
 
-###  This app is developed using :
+*This app is developed using flutter.*
