@@ -21,6 +21,13 @@ This is a flutter Application developed to help elders regarding their medical d
 
 * DRIVE LINK:
 
+## TECHNOLOGY STACK:
+
+This app is developed using the below platforms.
+
+* :flutter: Flutter 
+
+* :firebase: Firebase
 ## PROJECT SETUP:
 
 Download app apk file from github using the google drive link in the description.We are working on how you can download our app from Play Store.
