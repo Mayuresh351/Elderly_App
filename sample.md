@@ -46,7 +46,7 @@ This app helps you to remind you of you medicines. Using this app you will not m
 ## FUTURE UPDATES:
 
 We are working on how you can order medicines directly from our app.
-Working on how you can get to your doctor or the nearby doctors you have visited using Google map.
+Working on how you can get to your doctor or the nearby doctors you have visited and marking your home location using Google map.
 
 ## APP SCREENSHOTS:
  
