@@ -51,5 +51,3 @@ Working on how you can get to your doctor or the nearby doctors you have visited
  Here are some app screenshots.
 
  For more info regarding our app you may contact us at our E-mail [python team](pythonteam123@gmail.com)
-
-*This app is developed using flutter.*
