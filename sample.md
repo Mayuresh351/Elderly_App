@@ -9,9 +9,9 @@
  4. ATHARVA ALSHI-[atharva2001alshi@gmail.com](atharva2001alshi@gmail.com)
 
  ## MENTORS:
- 1.
- 2.
- 3.
+ 1.PALAK MANTRY
+ 2.MOHAMMAD MEHDI
+ 3.BHAVYA SHETH
 
 ## DESCRIPTION:
 
