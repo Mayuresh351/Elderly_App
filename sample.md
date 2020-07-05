@@ -28,6 +28,7 @@ This app is developed using the below platforms.
 * Flutter 
 
 * Firebase
+
 ## PROJECT SETUP:
 
 Download app apk file from github using the google drive link in the description.We are working on how you can download our app from Play Store.
