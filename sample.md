@@ -4,7 +4,7 @@
 
 ## TEAM MEMBERS:
  1. MAYURESH MANE
- 2. SHIVAM KARPE-[shivam.karpe2001@gmail.com]
+ 2. SHIVAM KARPE-[shivam.karpe2001@gmail.com](shivam.karpe2001@gmail.com)
  3. SAAD HASHMI
  4. ATHARVA ALSHI-[atharva2001alshi@gmail.com](atharva2001alshi@gmail.com)
 
