@@ -25,7 +25,7 @@ This is a flutter Application developed to help elders regarding their medical d
 
 This app is developed using the below platforms.
 
-* Flutter 
+* Flutter
 
 * Firebase
 
