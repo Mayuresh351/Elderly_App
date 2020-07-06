@@ -3,10 +3,10 @@
 ## TEAM NAME: PYTHON
 
 ## TEAM MEMBERS:
- 1. MAYURESH MANE-[mpm351@gmail.com](mpm351@gmail.com)
+ 1. [MAYURESH MANE](https://github.com/Mayuresh351)-[mpm351@gmail.com](mpm351@gmail.com)
  2. [SHIVAM KARPE](https://github.com/shivamk19)-[shivam.karpe2001@gmail.com](shivam.karpe2001@gmail.com)
- 3. SAAD HASHMI-[hashmis104@gmail.com](hashmis104@gmail.com)
- 4. ATHARVA ALSHI-[atharva2001alshi@gmail.com](atharva2001alshi@gmail.com)
+ 3. [SAAD HASHMI](https://github.com/hashmis79)-[hashmis104@gmail.com](hashmis104@gmail.com)
+ 4. [ATHARVA ALSHI](https://github.com/atharva1608)-[atharva2001alshi@gmail.com](atharva2001alshi@gmail.com)
 
  ## MENTORS:
  1. PALAK MANTRY
