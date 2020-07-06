@@ -1,19 +1,19 @@
 # ELDERLY APP
-TEAM NAME: PYTHON
-TEAM MEMBERS:
+## TEAM NAME: PYTHON
+## TEAM MEMBERS:
 
     MAYURESH MANE mpm351@gmail.com
     SHIVAM KARPE shivam.karpe2001@gmail.com
     SAAD HASHMI hashmis104@gmail.com
     ATHARVA ALSHI atharva2001alshi@gmail.com
 
-MENTORS:
+## MENTORS:
 
     PALAK MANTRY
     MOHAMMAD MEHDI
     BHAVYA SHETH
 
-DESCRIPTION:
+## DESCRIPTION:
 
 This is a flutter Application developed to help elders regarding their medical details.This app will help elders to take their medicines and diet as specified by their doctor without any delay in time.The guardian can have a watch on the medical history,medication details and the reports of the elder using this app.
 
@@ -21,9 +21,9 @@ This is a flutter Application developed to help elders regarding their medical d
 
     DRIVE LINK:
 
-TECHNOLOGY STACK:
+## TECHNOLOGY STACK:
 
-This app is developed using the below platforms.
+## This app is developed using the below platforms.
 
     Flutter
 
@@ -31,7 +31,7 @@ This app is developed using the below platforms.
 
     Dart language
 
-PROJECT SETUP:
+## PROJECT SETUP:
 
 Download app apk file from github using the google drive link in the description.We are working on how you can download our app from Play Store.
 USAGE:
