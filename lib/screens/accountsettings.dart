@@ -1,3 +1,4 @@
+
 import 'package:elderlyapp/constants.dart';
 import 'package:elderlyapp/screens/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,6 +12,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'dart:io';
 import 'package:path/path.dart';
+import 'package:elderlyapp/rootpage.dart';
 
 
 
@@ -35,160 +37,95 @@ class _AccSettingState extends State<AccSetting> {
   int call = 0;
   Timestamp birth;
   File image;
-//  StorageReference firebaseStorageRef = FirebaseStorage.instance.ref();
   String downloadURL;
   bool downloaded = false;
-
-
-//  Future<void> showMyDialog() async {
-//    String Newpass1;
-//    String Newpass2;
-//    print(autherror);
-//    return showDialog<void>(
-//      context: context,
-//      barrierDismissible: false, // user must tap button!
-//      builder: (BuildContext context) {
-//        return StatefulBuilder(
-//          builder: (context, setState){
-//            return AlertDialog(
-//              title: Text('Change Password'),
-//              content: SingleChildScrollView(
-//                child: ListBody(
-//                  children: <Widget>[
-//                    Text('Enter New Password :'),
-//                    Padding(
-//                      padding: EdgeInsets.all(10.0),
-//                      child: TextField(
-//                        decoration: kTextFieldDecoration,
-//                        onChanged: (value){
-//                          Newpass1 = value;
-//                        },
-//                      ),
-//                    ),
-//                    Text('Confirm Password :'),
-//                    Padding(
-//                      padding: EdgeInsets.all(10.0),
-//                      child: TextField(
-//                        decoration: kTextFieldDecoration,
-//                        onChanged: (value){
-//                          Newpass2 = value;
-//                        },
-//                      ),
-//                    ),
-//                    Text(
-//                      autherror == false ? '':'Password Do not match',
-//                      textAlign: TextAlign.center,
-//                      style: TextStyle(
-//                        fontSize: 18.0,
-//                        color: Colors.red,
-//                      ),
-//                    ),
-//                  ],
-//                ),
-//              ),
-//
-//              actions: <Widget>[
-//                FlatButton(
-//                  child: Container(
-//                    child: Text('Change Password',style: TextStyle(fontSize: 20),),
-//                  ),
-//                  onPressed: () {
-//                    if(Newpass1 != Newpass2){
-//                      setState(() {
-//                        autherror = true;
-//                        print('setstate');
-//                        print(autherror);
-//                      });
-//                      print('password not matching');
-//                    }
-//                    else {
-//                      Navigator.of(context).pop();
-//                      password = Newpass2;
-//                    }
-//                  },
-//                ),
-//              ],
-//            );
-//          },
-//        );
-//      },
-//    );
-//  }
-//  Future showAlert(){
-//    return showDialog<void>(
-//      context: context,
-//      barrierDismissible: false, // user must tap button!
-//      builder: (BuildContext context) {
-//        return StatefulBuilder(
-//          builder: (context, setState){
-//            return AlertDialog(
-//              title: Text('Change Password'),
-//              content: SingleChildScrollView(
-//                child: ListBody(
-//                  children: <Widget>[
-//                    Text('Enter New Password :'),
-//                    Padding(
-//                      padding: EdgeInsets.all(10.0),
-//                      child: TextField(
-//                        decoration: kTextFieldDecoration,
-//                        onChanged: (value){
-//                          Newpass1 = value;
-//                        },
-//                      ),
-//                    ),
-//                    Text('Confirm Password :'),
-//                    Padding(
-//                      padding: EdgeInsets.all(10.0),
-//                      child: TextField(
-//                        decoration: kTextFieldDecoration,
-//                        onChanged: (value){
-//                          Newpass2 = value;
-//                        },
-//                      ),
-//                    ),
-//                    Text(
-//                      autherror == false ? '':'Password Do not match',
-//                      textAlign: TextAlign.center,
-//                      style: TextStyle(
-//                        fontSize: 18.0,
-//                        color: Colors.red,
-//                      ),
-//                    ),
-//                  ],
-//                ),
-//              ),
-//
-//              actions: <Widget>[
-//                FlatButton(
-//                  child: Container(
-//                    child: Text('Change Password',style: TextStyle(fontSize: 20),),
-//                  ),
-//                  onPressed: () {
-//                    if(Newpass1 != Newpass2){
-//                      setState(() {
-//                        autherror = true;
-//                        print('setstate');
-//                        print(autherror);
-//                      });
-//                      print('password not matching');
-//                    }
-//                    else {
-//                      Navigator.of(context).pop();
-//                      password = Newpass2;
-//                    }
-//                  },
-//                ),
-//              ],
-//            );
-//          },
-//        );
-//      },
-//    );
-//  }
+  String uid;
+    Future showAlert(BuildContext context){
+      final size = MediaQuery.of(context).size;
+      final orientation = MediaQuery.of(context).orientation;
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setState){
+            return AlertDialog(
+              title: Text('Change Password'),
+              content: Text('Do You Really Want to Delete your Account?'),
+              actions: <Widget>[
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      GestureDetector(
+                        onTap: ()async{
+                          Navigator.pop(context);
+                          user.Signout();
+                          setState(() {
+                            showSpinner = true;
+                          });
+                          await user.deleteAccount();
+                          await user.Signout();
+                          UserData.signout = true;
+                          setState(() {
+                            showSpinner = false;
+                          });
+                          Navigator.popUntil(context, ModalRoute.withName(RootPage.id));
+                        },
+                        child: Container(
+                          height:(orientation == Orientation.landscape)?size.width*0.05:size.height*0.05,
+                          width: (orientation == Orientation.landscape)?size.height*0.35:size.width*0.35,
+                          color: Colors.green,
+                          child: Center(
+                            child: Text(
+                              'YES',
+                              style: TextStyle(
+                                fontFamily: 'Ubuntu',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          height:(orientation == Orientation.landscape)?size.width*0.05:size.height*0.05,
+                          width: (orientation == Orientation.landscape)?size.height*0.35:size.width*0.35,
+                          color: Colors.red,
+                          child: Center(
+                            child: Text(
+                              'NO',
+                              style: TextStyle(
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
   void yoyo()async{
     if(call == 0){
       await user.currentUser().then((value){
         email = value.email;
+        uid = value.uid;
       });
       await user.getData().then((value){
         username = value.data['Name'];
@@ -327,6 +264,11 @@ class _AccSettingState extends State<AccSetting> {
                       child: ListView(
                         children: <Widget>[
                           Changedetails(
+                            icon: Icons.verified_user,
+                            option: 'User - ID',
+                            type: uid,
+                          ),
+                          Changedetails(
                             icon: Icons.supervised_user_circle,
                             option: 'User Name',
                             type: username,
@@ -395,7 +337,6 @@ class _AccSettingState extends State<AccSetting> {
                               password = value;
                             },
                             onsubmitted: (value)async{
-//                              showMyDialog();
                                 setState(() {
                                   showSpinner = true;
                                 });
@@ -459,7 +400,34 @@ class _AccSettingState extends State<AccSetting> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.white,),
+                                    color: Colors.white,
+                                  fontSize: 25),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          FlatButton(
+                            onPressed:()async{
+                              showAlert(context);
+                            },
+                            child: Container(
+                              width: size.width * 0.7,
+                              height: size.height * 0.06,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadiusDirectional.circular(10.0),
+                                color: Colors.red,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Delete Account',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
+                                  fontSize: 25),
                                 ),
                               ),
                             ),

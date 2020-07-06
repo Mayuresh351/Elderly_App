@@ -121,6 +121,9 @@ class _ContactSettingsState extends State<ContactSettings> {
                               Pharmacy_Contact = value;
                             },
                           ),
+                          SizedBox(
+                            height: 50,
+                          ),
                           FlatButton(
                             onPressed: () {
                               Navigator.pushNamed(context, '/linkedAccountSetting');
@@ -130,7 +133,7 @@ class _ContactSettingsState extends State<ContactSettings> {
                               height: size.height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadiusDirectional.circular(10.0),
-                                color: Colors.blueAccent,
+                                color: Colors.green,
                               ),
                               child: Center(
                                 child: Text(
@@ -138,12 +141,13 @@ class _ContactSettingsState extends State<ContactSettings> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.white,),
+                                    color: Colors.white,
+                                      fontSize: 25),
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 30),
                           FlatButton(
                             onPressed:()async{
                               setState(() {
@@ -170,7 +174,8 @@ class _ContactSettingsState extends State<ContactSettings> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.white,),
+                                    color: Colors.white,
+                                      fontSize: 25),
                                 ),
                               ),
                             ),

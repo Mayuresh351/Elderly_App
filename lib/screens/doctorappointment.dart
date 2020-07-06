@@ -1,6 +1,8 @@
+import 'package:elderlyapp/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:elderlyapp/data/userdata.dart';
+import 'package:elderlyapp/components.dart';
 
 class DoctorApptPage extends StatefulWidget {
   static String id = 'DoctorApptPage';
@@ -62,6 +64,7 @@ class _DoctorApptPageState extends State<DoctorApptPage> {
         ),
         body: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 TableCalendar(
                   events: _events,
@@ -97,6 +100,16 @@ class _DoctorApptPageState extends State<DoctorApptPage> {
                     },
                   ),
                 ),
+                Container(
+                  child: Text(
+                    'Long Press Appointment Text to DELETE',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: kLightTextColor
+                    ),
+                  ),
+                ),
               ],
             )),
         floatingActionButton: FloatingActionButton(
@@ -107,6 +120,7 @@ class _DoctorApptPageState extends State<DoctorApptPage> {
           child: Icon(Icons.add),
           tooltip: 'Add Other Appointments',
         ),
+        bottomNavigationBar: BottomBar(),
       );
     }
   }

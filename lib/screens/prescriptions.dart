@@ -175,68 +175,6 @@ class _ImageScreenState extends State<ImageScreen> {
   }
 }
 
-//class ImageScreen extends StatelessWidget {
-//
-//  File image;
-//  var user = UserData();
-//
-//  Widget makeImageGrid(){
-//    return GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-//        itemBuilder: (context,index){
-//      return GridTile(child: ImageGridItem(index));
-//        });
-//  }
-//  Future getImage()async{
-//    var NewImage =  await ImagePicker.pickImage(source: ImageSource.gallery);
-//    print(NewImage);
-//
-//    setState(() {
-//      try{
-//        image = NewImage;
-//      }catch(e){
-//        print(e);
-//      }
-//    });
-//  }
-//  Future uploadIt()async{
-//    String filename;
-//    await user.currentUser().then((value){
-//      filename = value.uid;
-//    });
-//    StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child('$filename.png');
-//    StorageUploadTask uploadTask = firebaseStorageRef.putFile(image);
-//    StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
-//    setState(() {
-//    });
-//  }
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      appBar: AppBar(
-//        backgroundColor: kWidgetColor,
-//        title: Text(
-//          'Upload Prescriptions',
-//          style: TextStyle(
-//            fontWeight: FontWeight.bold,
-//            color: Colors.white,
-//          ),
-//        ),
-//      ),
-//      body: Container(
-//        child: Center(),
-//      ),
-//      floatingActionButton: FloatingActionButton(
-//        onPressed: () {
-//
-//        },
-//        backgroundColor: kWidgetColor,
-//        child: Icon(Icons.notifications_none),
-//      ),
-//      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-//      bottomNavigationBar: Hero(tag:'drawer',child: BottomBar()),
-//    );
-//  }
-//}
 
 class ImageGridItem extends StatefulWidget {
   ImageGridItem(int index, File image1) {

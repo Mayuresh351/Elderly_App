@@ -1,4 +1,5 @@
 import 'package:elderlyapp/screens/accountsettings.dart';
+import 'package:elderlyapp/screens/doctorappointment.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
 import 'package:elderlyapp/screens/medicationpage.dart';
 import 'package:elderlyapp/screens/profilesettings.dart';
@@ -169,7 +170,7 @@ class BottomBar extends StatelessWidget {
                             tabIcon: Icons.calendar_today,
                             tabContent: 'Schedule',
                             ontap: () {
-                              Navigator.pushNamed(context, SchedulePage.id);
+                              Navigator.pushNamed(context, DoctorApptPage.id);
                               kChosenTab = 3;
                             },
                             color: (kChosenTab == 3)?kWidgetColor:kTabColorLite,

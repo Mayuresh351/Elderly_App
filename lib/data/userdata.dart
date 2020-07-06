@@ -83,6 +83,10 @@ class UserData{
       return null;
     }
   }
+  void deleteAccount()async{
+    final user = await FirebaseAuth.instance.currentUser();
+    await user.delete();
+  }
   Future<DocumentSnapshot> getData()async{
     try{
       final user = await FirebaseAuth.instance.currentUser();

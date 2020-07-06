@@ -10,6 +10,7 @@ import 'package:elderlyapp/src/ui/homepage/homepage.dart';
 import 'package:elderlyapp/src/ui/new_entry/new_entry_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:elderlyapp/components.dart';
 
 
 class NewEntry extends StatefulWidget {
