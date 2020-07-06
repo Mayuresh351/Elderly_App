@@ -1,17 +1,19 @@
 # ELDERLY APP
+
 ## TEAM NAME: PYTHON
+
 ## TEAM MEMBERS:
 
-    MAYURESH MANE mpm351@gmail.com
-    SHIVAM KARPE shivam.karpe2001@gmail.com
-    SAAD HASHMI hashmis104@gmail.com
-    ATHARVA ALSHI atharva2001alshi@gmail.com
+1. MAYURESH MANE mpm351@gmail.com
+2. SHIVAM KARPE shivam.karpe2001@gmail.com
+3. SAAD HASHMI hashmis104@gmail.com
+4. ATHARVA ALSHI atharva2001alshi@gmail.com
 
 ## MENTORS:
 
-    PALAK MANTRY
-    MOHAMMAD MEHDI
-    BHAVYA SHETH
+1. PALAK MANTRY
+2. MOHAMMAD MEHDI
+3. BHAVYA SHETH
 
 ## DESCRIPTION:
 
@@ -23,13 +25,13 @@ This is a flutter Application developed to help elders regarding their medical d
 
 ## TECHNOLOGY STACK:
 
-## This app is developed using the below platforms.
+This app is developed using the below platforms.
 
-    Flutter
+* Flutter
 
-    Firebase
+* Firebase
 
-    Dart language
+* Dart language
 
 ## PROJECT SETUP:
 
@@ -48,4 +50,4 @@ APP SCREENSHOTS:
 
 Here are some app screenshots.
 
-For more info regarding our app you may contact us @ pythonteam123@gmail.com
+For more info regarding our app you may contact us at pythonteam123@gmail.com
