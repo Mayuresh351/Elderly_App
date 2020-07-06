@@ -41,7 +41,7 @@ Once you are done with downloading our apk file open it and allow permission so 
 
 ## APPLICATIONS:
 
-This app helps you to remind you of you medicines. Using this app you will not miss your doctor appointments as it will remind you on a regular basis.Even if you forget to take your medical reports with you this app will always have it.
+This app helps you to remind you of your medicines. Using this app you will not miss your doctor appointments as it will remind you on a regular basis.Even if you forget to take your medical reports with you this app will always have it.
 
 ## FUTURE UPDATES:
 
