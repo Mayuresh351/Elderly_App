@@ -198,3 +198,47 @@ class UserData{
   }
 }
 
+class otherUser{
+  String otherUid;
+  otherUser({this.otherUid});
+
+  final CollectionReference otherAccountUserData = Firestore.instance.collection('Userdata');
+
+  OtherUserData _userDataFromSnapshot(DocumentSnapshot snapshot){
+    return OtherUserData(
+      otherUserUid: otherUid,
+      otherUserName: snapshot.data['Name'],
+    );
+  }
+
+  //Stream<QuerySnapshot> get otherUserData {
+  //return otherAccountUserData.snapshots();
+  //}
+
+  Stream<OtherUserData> get other {
+    return otherAccountUserData.document(otherUid).snapshots()
+        .map(_userDataFromSnapshot);
+  }
+
+}
+
+class OtherUserData {
+  String otherUserUid;
+  String otherUserName;
+  OtherUserData({this.otherUserUid, this.otherUserName});
+}
+
+class DoctorNotes extends UserData{
+
+  final CollectionReference DoctorNote = Firestore.instance.collection('Doctor\'s Notes');
+
+}
+
+class DoctorNote{
+
+  String Note;
+  String DoctorName;
+
+  DoctorNote({this.Note, this.DoctorName});
+
+}
