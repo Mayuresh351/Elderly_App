@@ -47,7 +47,8 @@ class _NewEntryState extends State<NewEntry> {
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
-
+    final size = MediaQuery.of(context).size;
+    final orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       key: _scaffoldKey,
       resizeToAvoidBottomPadding: false,
@@ -55,7 +56,7 @@ class _NewEntryState extends State<NewEntry> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
-          color: Color(0xFF3EB16F),
+          color: kWidgetColor,
         ),
         centerTitle: true,
         title: Text(
@@ -521,6 +522,8 @@ class MedicineTypeColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final orientation = MediaQuery.of(context).orientation;
     final NewEntryBloc _newEntryBloc = Provider.of<NewEntryBloc>(context);
     return GestureDetector(
       onTap: () {
@@ -529,7 +532,7 @@ class MedicineTypeColumn extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            width: 85,
+            width: (orientation == Orientation.landscape)?size.height*0.20:size.width*0.20,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: isSelected ? kWidgetColor : Colors.white,
@@ -548,7 +551,7 @@ class MedicineTypeColumn extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 8.0),
             child: Container(
-              width: 80,
+              width: (orientation == Orientation.landscape)?size.height*0.20:size.width*0.20,
               height: 30,
               decoration: BoxDecoration(
                 color: isSelected ? kWidgetColor : Colors.transparent,

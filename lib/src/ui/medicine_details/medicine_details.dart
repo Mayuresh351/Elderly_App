@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:elderlyapp/src/models/medicine.dart';
 import 'package:provider/provider.dart';
 import 'package:elderlyapp/screens/reminderpage.dart';
+import 'package:elderlyapp/constants.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import '../../global_bloc.dart';
 
@@ -13,6 +15,7 @@ class MedicineDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
     return Scaffold(
       resizeToAvoidBottomPadding: false,
@@ -20,7 +23,7 @@ class MedicineDetails extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
-          color: Color(0xFF3EB16F),
+          color: kWidgetColor,
         ),
         centerTitle: true,
         title: Text(
@@ -53,7 +56,7 @@ class MedicineDetails extends StatelessWidget {
                   width: 280,
                   height: 70,
                   child: FlatButton(
-                    color: Color(0xFF3EB16F),
+                    color: kWidgetColor,
                     shape: StadiumBorder(),
                     onPressed: () {
                       openAlertBox(context, _globalBloc);
@@ -180,6 +183,7 @@ class MedicineDetails extends StatelessWidget {
 class MainSection extends StatelessWidget {
   final Medicine medicine;
 
+
   MainSection({
     Key key,
     @required this.medicine,
@@ -191,7 +195,7 @@ class MainSection extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe900, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: kOrangeColor,
           size: size,
         ),
       );
@@ -200,7 +204,7 @@ class MainSection extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe901, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: kOrangeColor,
           size: size,
         ),
       );
@@ -209,7 +213,7 @@ class MainSection extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe902, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: kOrangeColor,
           size: size,
         ),
       );
@@ -218,7 +222,7 @@ class MainSection extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe903, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: kOrangeColor,
           size: size,
         ),
       );
@@ -227,7 +231,7 @@ class MainSection extends StatelessWidget {
       tag: medicine.medicineName + medicine.medicineType,
       child: Icon(
         Icons.local_hospital,
-        color: Color(0xFF3EB16F),
+        color: kOrangeColor,
         size: size,
       ),
     );
@@ -238,7 +242,7 @@ class MainSection extends StatelessWidget {
     return Container(
       child: Row(
         children: <Widget>[
-          makeIcon(175),
+          makeIcon(MediaQuery.of(context).size.width*0.365),
           SizedBox(
             width: 15,
           ),
@@ -295,7 +299,7 @@ class MainInfoTab extends StatelessWidget {
             fieldInfo,
             style: TextStyle(
                 fontSize: 24,
-                color: Color(0xFF3EB16F),
+                color: kWidgetColor,
                 fontWeight: FontWeight.bold),
           ),
         ],

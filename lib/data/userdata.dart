@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elderlyapp/screens/suscess_screen.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:elderlyapp/constants.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class UserData{
 
@@ -67,15 +69,6 @@ class UserData{
       'Image List': imglist,
       'Image Count': 0,
     });
-
-//  return Firestore.instance.collection('Userdata').add({
-//      'Name' : Name,
-//      'Language' : language,
-//      'type' : type,
-//      'Contact' : Contact,
-//      'Emergency' : Emergency,
-//      'Pharmacy' : Pharmacy,
-//  });
   }
   Future<FirebaseUser> SignUp(String email, String Password,String Name, String language,String type,DateTime birthday)async{
     try{
@@ -196,49 +189,33 @@ class UserData{
       return null;
     }
   }
-}
-
-class otherUser{
-  String otherUid;
-  otherUser({this.otherUid});
-
-  final CollectionReference otherAccountUserData = Firestore.instance.collection('Userdata');
-
-  OtherUserData _userDataFromSnapshot(DocumentSnapshot snapshot){
-    return OtherUserData(
-      otherUserUid: otherUid,
-      otherUserName: snapshot.data['Name'],
-    );
+  Future updateAppointments(Map<DateTime,List<dynamic>> events)async{
+    Iterable<DateTime> KeyList = events.keys;
+    Iterable<List<dynamic>> ValList = events.values;
+    List<String> TimeList = [];
+    print(KeyList);
+    print(ValList);
+    for(DateTime i in KeyList){
+      TimeList.add(i.toString());
+    }
+    Map<String,List<dynamic>> NewEvents = Map.fromIterables(TimeList, ValList);
+    print(NewEvents);
+    var user = await FirebaseAuth.instance.currentUser();
+    final CollectionReference Collection = await Firestore.instance
+        .collection('DoctorAppointments');
+    await Collection.document(user.uid).setData({'Events': NewEvents});
   }
-
-  //Stream<QuerySnapshot> get otherUserData {
-  //return otherAccountUserData.snapshots();
-  //}
-
-  Stream<OtherUserData> get other {
-    return otherAccountUserData.document(otherUid).snapshots()
-        .map(_userDataFromSnapshot);
+  Future<DocumentSnapshot> getAppointments()async{
+    try{
+      final user = await FirebaseAuth.instance.currentUser();
+      print(user.uid);
+      final CollectionReference Collection = await Firestore.instance.collection('DoctorAppointments');
+      var appointments = Collection.document(user.uid).get();
+      return appointments;
+    }catch(e){
+      print(e);
+      return null;
+    }
   }
-
 }
 
-class OtherUserData {
-  String otherUserUid;
-  String otherUserName;
-  OtherUserData({this.otherUserUid, this.otherUserName});
-}
-
-class DoctorNotes extends UserData{
-
-  final CollectionReference DoctorNote = Firestore.instance.collection('Doctor\'s Notes');
-
-}
-
-class DoctorNote{
-
-  String Note;
-  String DoctorName;
-
-  DoctorNote({this.Note, this.DoctorName});
-
-}

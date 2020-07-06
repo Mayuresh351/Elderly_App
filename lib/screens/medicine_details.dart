@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'medicine.dart';
-
+import 'package:elderlyapp/constants.dart';
 
 
 class MedicineDetails extends StatelessWidget {
@@ -16,7 +16,7 @@ class MedicineDetails extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
-          color: Color(0xFF3EB16F),
+          color: kWidgetColor,
         ),
         centerTitle: true,
         title: Text(
@@ -49,7 +49,7 @@ class MedicineDetails extends StatelessWidget {
                   width: 280,
                   height: 70,
                   child: FlatButton(
-                    color: Color(0xFF3EB16F),
+                    color: kWidgetColor,
                     shape: StadiumBorder(),
                     onPressed: () {
                     },
