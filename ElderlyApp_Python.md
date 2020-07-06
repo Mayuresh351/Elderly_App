@@ -52,6 +52,4 @@ Working on how you can get to your doctor or the nearby doctors you have visited
  
  Here are some app screenshots.
 
-https://photos.app.goo.gl/v6daPp95dkRhBPT3A
-
  For more info regarding our app you may contact us at pythonteam123@gmail.com
