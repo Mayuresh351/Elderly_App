@@ -4,7 +4,7 @@
 
 ## TEAM MEMBERS:
  1. MAYURESH MANE-[mpm351@gmail.com](mpm351@gmail.com)
- 2. SHIVAM KARPE-[shivam.karpe2001@gmail.com](shivam.karpe2001@gmail.com)
+ 2. [SHIVAM KARPE](https://github.com/shivamk19)-[shivam.karpe2001@gmail.com](shivam.karpe2001@gmail.com)
  3. SAAD HASHMI-[hashmis104@gmail.com](hashmis104@gmail.com)
  4. ATHARVA ALSHI-[atharva2001alshi@gmail.com](atharva2001alshi@gmail.com)
 
