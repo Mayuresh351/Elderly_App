@@ -34,7 +34,8 @@ This is a flutter Application developed to help elders regarding their medical d
 ## PROJECT SETUP:
 
 Download app apk file from github using the google drive link in the description.We are working on how you can download our app from Play Store.
-USAGE:
+
+## USAGE:
 
 Once you are done with downloading our apk file open it and allow permission so that you can access the app.
 APPLICATIONS:
