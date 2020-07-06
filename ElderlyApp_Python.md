@@ -17,9 +17,9 @@
 
 This is a flutter Application developed to help elders regarding their medical details.This app will help elders to take their medicines and diet as specified by their doctor without any delay in time.The guardian can have a watch on the medical history,medication details and the reports of the elder using this app.
 
-    :octocat:App on GitHub
+    :octocat:[App on GitHub](https://github.com/Mayuresh351/Elderly_App)
 
-    DRIVE LINK: https://drive.google.com/file/d/1Dt0ogGWINYJWQA0FEHdTnqze-LF2xfir/view?usp=drivesdk
+    DRIVE LINK: [App on Drive](https://drive.google.com/file/d/1Dt0ogGWINYJWQA0FEHdTnqze-LF2xfir/view?usp=drivesdk)
 
 ## TECHNOLOGY STACK:
 
