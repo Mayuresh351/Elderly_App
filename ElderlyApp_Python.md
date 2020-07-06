@@ -47,4 +47,4 @@ APP SCREENSHOTS:
 
 Here are some app screenshots.
 
-For more info regarding our app you may contact us at pythonteam123@gmail.com
+For more info regarding our app you may contact us @ pythonteam123@gmail.com
