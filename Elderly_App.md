@@ -19,7 +19,7 @@ This is a flutter Application developed to help elders regarding their medical d
 
     :octocat:App on GitHub
 
-    DRIVE LINK:
+    DRIVE LINK: https://drive.google.com/file/d/1Dt0ogGWINYJWQA0FEHdTnqze-LF2xfir/view?usp=drivesdk
 
 ## TECHNOLOGY STACK:
 
