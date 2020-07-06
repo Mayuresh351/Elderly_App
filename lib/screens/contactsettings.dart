@@ -104,15 +104,6 @@ class _ContactSettingsState extends State<ContactSettings> {
                       child: ListView(
                         children: <Widget>[
                           Changedetails(
-                            icon: Icons.link,
-                            option: 'Linked Contact',
-                            type: User_contact,
-                            datatype: TextInputType.phone,
-                            onChanged: (value){
-                              User_contact = value;
-                            },
-                          ),
-                          Changedetails(
                             icon: Icons.error,
                             option: 'Emergency Contact',
                             type: Emergency_Contact,
@@ -130,6 +121,29 @@ class _ContactSettingsState extends State<ContactSettings> {
                               Pharmacy_Contact = value;
                             },
                           ),
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/linkedAccountSetting');
+                            },
+                            child: Container(
+                              width: size.width * 0.7,
+                              height: size.height * 0.06,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadiusDirectional.circular(10.0),
+                                color: Colors.blueAccent,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Link Accounts',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10),
                           FlatButton(
                             onPressed:()async{
                               setState(() {

@@ -1,3 +1,6 @@
+import 'package:elderlyapp/screens/accountsLinked.dart';
+import 'package:elderlyapp/screens/addDoctorsNotes.dart';
+import 'package:elderlyapp/screens/linkAccount.dart';
 import 'package:elderlyapp/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
@@ -49,6 +52,9 @@ class MyApp extends StatelessWidget {
         RootPage.id:(context) => RootPage(),
         SuccessScreenDetails.id:(context) => SuccessScreenDetails(),
         ImageScreen.id:(context) => ImageScreen(),
+        '/linkedAccountSetting': (context) => LinkAccount(),
+        '/accountsLinked': (context) => AccountsLinked(),
+        '/addDoctorNote': (context) => AddDoctorsNotes(),
       },
     );
   }
