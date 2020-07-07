@@ -58,4 +58,4 @@ For more info regarding our app you may contact us at pythonteam123@gmail.com
 
 ## Screenshots Visible
 
-<img src="https://drive.google.com/uc?export=view&id=1fXze_Lb78PHM9jtqPT5LkZ6pVR2dmo4z height = 350/"
+<img src="https://drive.google.com/uc?export=view&id=1fXze_Lb78PHM9jtqPT5LkZ6pVR2dmo4z" height = 350/>
