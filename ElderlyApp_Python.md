@@ -40,10 +40,10 @@ Download app apk file from github using the google drive link in the description
 ## USAGE:
 
 Once you are done with downloading our apk file open it and allow permission so that you can access the app.
-APPLICATIONS:
+## APPLICATIONS:
 
 This app helps you to remind you of your medicines. Using this app you will not miss your doctor appointments as it will remind you on a regular basis.Even if you forget to take your medical reports with you this app will always have it.
-FUTURE UPDATES:
+## FUTURE UPDATES:
 
 We are working on how you can order medicines directly from our app. Working on how you can get to your doctor or the nearby doctors you have visited and marking your home location using Google map.
 
