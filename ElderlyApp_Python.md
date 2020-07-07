@@ -4,10 +4,10 @@
 
 ## TEAM MEMBERS:
 
-1. MAYURESH MANE mpm351@gmail.com
-2. SHIVAM KARPE shivam.karpe2001@gmail.com
-3. SAAD HASHMI hashmis104@gmail.com
-4. ATHARVA ALSHI atharva2001alshi@gmail.com
+1. MAYURESH MANE - mpm351@gmail.com
+2. SHIVAM KARPE - shivam.karpe2001@gmail.com
+3. SAAD HASHMI - hashmis104@gmail.com
+4. ATHARVA ALSHI - atharva2001alshi@gmail.com
 
 ## MENTORS:
 
@@ -52,7 +52,8 @@ We are working on how you can order medicines directly from our app. Working on 
 For more info regarding our app you may contact us at pythonteam123@gmail.com
 
 ## Screenshots
-![Sign Up Page!](/home/dell/Downloads/screenshot1.jpeg)
-![HomePage!](/home/dell/Downloads/screenshot1.jpeg)
-![Notification!](/home/dell/Downloads/screenshot1.jpeg)
+Screenshot Drive Link: 
+1. [Sign Up Page](https://drive.google.com/file/d/1M2ltiBrogJLWqtqWa5KbSzQMm6dAgNh6/view?usp=drivesdk)
+2. [HomePage](https://drive.google.com/file/d/1M7ntM-vmeu4_jTRWX9EQ4qnGjM_rXlv5/view?usp=drivesdk)
+3. [Notifications](https://drive.google.com/file/d/1LxUewzgULt5_jvRk25nWGZ-q9AdsGDq-/view?usp=drivesdk)
 
