@@ -19,7 +19,9 @@ This is a flutter Application developed to help elders regarding their medical d
 
 * :octocat:[App on GitHub](https://github.com/Mayuresh351/Elderly_App.git)
 
-* DRIVE LINK:[App Video](https://drive.google.com/file/d/1Dt0ogGWINYJWQA0FEHdTnqze-LF2xfir/view?usp=drivesdk)
+* DRIVE LINK FOR APP VIDEO:[App Video](https://drive.google.com/file/d/1Dt0ogGWINYJWQA0FEHdTnqze-LF2xfir/view?usp=drivesdk)
+
+* DRIVE LINK FOR SCREENSHOTS:[SCREENSHOT IMAGES](https://drive.google.com/folderview?id=1MFY5v1l5PIEHo1Xv9NN8OOWMJHs0qTR9)
 
 ## TECHNOLOGY STACK:
 
