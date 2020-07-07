@@ -52,6 +52,6 @@ Working on how you can get to your doctor or the nearby doctors you have visited
  
  Here are some app screenshots.
 
- ![Ss](https://github.com/Mayuresh351/Elderly_App/blob/shivam/Screenshots/Screenshot_20200706-230338.jpg)
- 
+ [Ss](https://github.com/Mayuresh351/Elderly_App/blob/shivam/Screenshots/Screenshot_20200706-230338.jpg)
+
  For more info regarding our app you may contact us at pythonteam123@gmail.com
