@@ -56,7 +56,7 @@ Working on how you can get to your doctor or the nearby doctors you have visited
 
  ## Screenshots:
  
-![Sign Up Page](https://user-images.githubusercontent.com/64491477/86780271-340c8400-c07a-11ea-9e00-fc977843b000.jpg)
-![HomePage](https://user-images.githubusercontent.com/64491477/86780833-cd3b9a80-c07a-11ea-8a4c-0b7d6393b775.jpg)
+![Sign Up Page](https://user-images.githubusercontent.com/64491477/86780833-cd3b9a80-c07a-11ea-8a4c-0b7d6393b775.jpg)
+![HomePage](https://user-images.githubusercontent.com/64491477/86780888-e17f9780-c07a-11ea-9edf-1a85533d0c64.jpg)
 ![Notifications](https://user-images.githubusercontent.com/64491477/86788201-8605d780-c083-11ea-96e0-b878e3259018.jpg)
 ![Reminder](https://user-images.githubusercontent.com/64491477/86788640-0593a680-c084-11ea-9bfb-c8123c094db0.jpg)
