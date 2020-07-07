@@ -52,16 +52,7 @@ We are working on how you can order medicines directly from our app. Working on 
 For more info regarding our app you may contact us at pythonteam123@gmail.com
 
 ## Screenshots
-<table>
-  <tr>
-    <td>Sign Up Page</td>
-    <td>HomePage</td>
-    <td>Notifications</td>
-    </tr>
-  <tr>
-    <td> <img src="https://drive.google.com/file/d/1M2ltiBrogJLWqtqWa5KbSzQMm6dAgNh6/view?usp=drivesdk" ></td>
-    <td> <img src="https://drive.google.com/file/d/1M7ntM-vmeu4_jTRWX9EQ4qnGjM_rXlv5/view?usp=drivesdk" ></td>
-    <td> <img src="https://drive.google.com/file/d/1LxUewzgULt5_jvRk25nWGZ-q9AdsGDq-/view?usp=drivesdk"></td>
-    </tr>
-</table> 
+1. [Sign Up Page](https://drive.google.com/file/d/1M2ltiBrogJLWqtqWa5KbSzQMm6dAgNh6/view?usp=drivesdk)
+2. [HomePage](https://drive.google.com/file/d/1M7ntM-vmeu4_jTRWX9EQ4qnGjM_rXlv5/view?usp=drivesdk)
+3. [Notifications](https://drive.google.com/file/d/1LxUewzgULt5_jvRk25nWGZ-q9AdsGDq-/view?usp=drivesdk)
 
