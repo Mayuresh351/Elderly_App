@@ -56,3 +56,6 @@ For more info regarding our app you may contact us at pythonteam123@gmail.com
 2. [HomePage](https://drive.google.com/file/d/1M7ntM-vmeu4_jTRWX9EQ4qnGjM_rXlv5/view?usp=drivesdk)
 3. [Notifications](https://drive.google.com/file/d/1LxUewzgULt5_jvRk25nWGZ-q9AdsGDq-/view?usp=drivesdk)
 
+## Screenshots Visible
+
+<img src="https://drive.google.com/uc?export=view&id=1fXze_Lb78PHM9jtqPT5LkZ6pVR2dmo4z height = 350/"
