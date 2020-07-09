@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Mane\\Desktop\\Elderly_Github\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Mane\\Desktop\\Elderly_App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mane\\.gradle\\caches\\transforms-2\\files-2.1\\158de9519577c7ffb49592b2f543b9bc\\core-1.2.0\\res\\values\\values.xml",
@@ -78,20 +78,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mane\\Desktop\\Elderly_Github\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "C:\\Users\\Mane\\Desktop\\Elderly_App\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,307,389,493,602,722,819",
-                        "endColumns": "143,107,81,103,108,119,96,73",
-                        "endOffsets": "194,302,384,488,597,717,814,888"
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "137,791",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "433,953"
                     },
                     "to": {
-                        "startLines": "114,115,116,117,118,119,120,121",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "8354,8498,8606,8688,8792,8901,9021,9118",
-                        "endColumns": "143,107,81,103,108,119,96,73",
-                        "endOffsets": "8493,8601,8683,8787,8896,9016,9113,9187"
+                        "startLines": "123,128",
+                        "startColumns": "4,4",
+                        "startOffsets": "9263,9560",
+                        "endLines": "127,130",
+                        "endColumns": "12,12",
+                        "endOffsets": "9555,9720"
                     }
                 },
                 {
@@ -129,22 +131,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mane\\Desktop\\Elderly_Github\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\Mane\\Desktop\\Elderly_App\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "137,791",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "433,953"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,307,389,493,602,722,819",
+                        "endColumns": "143,107,81,103,108,119,96,73",
+                        "endOffsets": "194,302,384,488,597,717,814,888"
                     },
                     "to": {
-                        "startLines": "123,128",
-                        "startColumns": "4,4",
-                        "startOffsets": "9263,9560",
-                        "endLines": "127,130",
-                        "endColumns": "12,12",
-                        "endOffsets": "9555,9720"
+                        "startLines": "114,115,116,117,118,119,120,121",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "8354,8498,8606,8688,8792,8901,9021,9118",
+                        "endColumns": "143,107,81,103,108,119,96,73",
+                        "endOffsets": "8493,8601,8683,8787,8896,9016,9113,9187"
                     }
                 }
             ]

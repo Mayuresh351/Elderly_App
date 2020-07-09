@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
+import 'notesList.dart';
+import 'package:provider/provider.dart';
 
 class AddDoctorsNotes extends StatefulWidget {
   @override
@@ -46,6 +48,9 @@ class _AddDoctorsNotesState extends State<AddDoctorsNotes> {
                   color: kWidgetColorlite,
                   elevation: 7.0,
                   child: FlatButton(
+                    onPressed: ()
+                    {
+                    },
                     child: Center(
                       child: Text(
                         'Add',

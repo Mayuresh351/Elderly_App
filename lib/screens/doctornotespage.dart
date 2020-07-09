@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/components.dart';
 import 'package:elderlyapp/constants.dart';
+import 'notesList.dart';
 
 class NotesPage extends StatefulWidget {
   static String id = 'NotesPage';
@@ -20,7 +21,7 @@ class _NotesPageState extends State<NotesPage> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: SingleChildScrollView(),
+      body: NotesList(),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add, color: Colors.white),
           onPressed: () {

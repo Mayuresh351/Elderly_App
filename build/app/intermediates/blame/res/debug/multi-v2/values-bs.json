@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Mane\\Desktop\\Elderly_Github\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bs\\values-bs.xml",
+            "outputFile": "C:\\Users\\Mane\\Desktop\\Elderly_App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bs\\values-bs.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mane\\.gradle\\caches\\transforms-2\\files-2.1\\3fc45067e5d4f81a347afb5bc6343590\\play-services-base-17.1.0\\res\\values-bs\\values.xml",

@@ -245,6 +245,21 @@ class otherUser{
         .map(_userDataFromSnapshot);
   }
 
+  //Changed Here 2
+
+  final CollectionReference DoctorNote = Firestore.instance.collection('Doctor\'s Notes');
+
+
+  Future updateNoteData(List<String> note, List<String> doctor) async {
+    final user = await FirebaseAuth.instance.currentUser();
+    return await DoctorNote.document(user.uid).setData({
+      'Notes': note,
+      'Doctors': doctor,
+    });
+  }
+
+
+
 }
 
 class OtherUserData {
@@ -252,6 +267,8 @@ class OtherUserData {
   String otherUserName;
   OtherUserData({this.otherUserUid, this.otherUserName});
 }
+
+//Changed Here
 
 class DoctorNotes extends UserData{
 
@@ -267,3 +284,6 @@ class DoctorNote{
   DoctorNote({this.Note, this.DoctorName});
 
 }
+
+//Changed from here 2
+

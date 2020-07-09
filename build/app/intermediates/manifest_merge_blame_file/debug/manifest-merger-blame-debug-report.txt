@@ -12,20 +12,20 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.VIBRATE" />
-15-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:3:5-66
-15-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:3:22-63
+15-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:3:5-66
+15-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:3:22-63
 16    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-16-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:4:5-80
-16-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:4:22-78
+16-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:4:5-80
+16-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:4:22-78
 17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-17-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
-17-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+17-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+17-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
 18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-18-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
-18-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+18-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+18-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
 19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 19-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\Mane\.gradle\caches\transforms-2\files-2.1\a24685140379739bfb764ff9dd8d5ad3\play-services-measurement-17.2.2\AndroidManifest.xml:24:5-79
 19-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\Mane\.gradle\caches\transforms-2\files-2.1\a24685140379739bfb764ff9dd8d5ad3\play-services-measurement-17.2.2\AndroidManifest.xml:24:22-76
@@ -46,30 +46,30 @@
 28         FlutterApplication and put your custom class here.
 29    -->
 30    <application
-30-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:10:5-54:19
+30-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:10:5-54:19
 31        android:name="io.flutter.app.FlutterApplication"
-31-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:11:9-57
+31-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:11:9-57
 32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 32-->[androidx.core:core:1.2.0] C:\Users\Mane\.gradle\caches\transforms-2\files-2.1\158de9519577c7ffb49592b2f543b9bc\core-1.2.0\AndroidManifest.xml:24:18-86
 33        android:debuggable="true"
 34        android:icon="@mipmap/ic_launcher"
-34-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:13:9-43
+34-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:13:9-43
 35        android:label="elderlyapp" >
-35-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:12:9-35
+35-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:12:9-35
 36        <activity
-36-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:14:9-42:20
+36-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:14:9-42:20
 37            android:name="com.saadhaashmi.elderlyapp.MainActivity"
-37-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:15:13-41
+37-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:15:13-41
 38            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-38-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:18:13-144
+38-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:18:13-144
 39            android:hardwareAccelerated="true"
-39-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:19:13-47
+39-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:19:13-47
 40            android:launchMode="singleTop"
-40-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:16:13-43
+40-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:16:13-43
 41            android:theme="@style/LaunchTheme"
-41-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:17:13-47
+41-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:17:13-47
 42            android:windowSoftInputMode="adjustResize" >
-42-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:20:13-55
+42-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:20:13-55
 43
 44            <!--
 45                 Specifies an Android theme to apply to this Activity as soon as
@@ -89,80 +89,80 @@
 59                 Flutter's first frame.
 60            -->
 61            <meta-data
-61-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:34:13-37:17
+61-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:34:13-37:17
 62                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-62-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:35:15-80
+62-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:35:15-80
 63                android:value="true" />
-63-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:36:15-35
+63-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:36:15-35
 64
 65            <intent-filter>
-65-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:38:13-41:29
+65-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:38:13-41:29
 66                <action android:name="android.intent.action.MAIN" />
-66-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:39:17-68
-66-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:39:25-66
+66-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:39:17-68
+66-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:39:25-66
 67
 68                <category android:name="android.intent.category.LAUNCHER" />
-68-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:40:17-76
-68-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:40:27-74
+68-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:40:17-76
+68-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:40:27-74
 69            </intent-filter>
 70        </activity>
 71
 72        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
-72-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:43:14-47:25
-72-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:43:24-112
+72-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:43:14-47:25
+72-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:43:24-112
 73            <intent-filter>
-73-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:44:17-46:33
+73-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:44:17-46:33
 74                <action android:name="android.intent.action.BOOT_COMPLETED" />
-74-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:45:22-91
-74-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:45:30-81
+74-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:45:22-91
+74-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:45:30-81
 75            </intent-filter>
 76        </receiver>
 77        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
-77-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:48:14-111
-77-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:48:24-108
+77-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:48:14-111
+77-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:48:24-108
 78        <!--
 79             Don't delete the meta-data below.
 80             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 81        -->
 82        <meta-data
-82-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:51:9-53:33
+82-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:51:9-53:33
 83            android:name="flutterEmbedding"
-83-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:52:13-44
+83-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:52:13-44
 84            android:value="2" />
-84-->C:\Users\Mane\Desktop\Elderly_Github\android\app\src\main\AndroidManifest.xml:53:13-30
+84-->C:\Users\Mane\Desktop\Elderly_App\android\app\src\main\AndroidManifest.xml:53:13-30
 85
 86        <service
-86-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+86-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_App\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 87            android:name="com.google.firebase.components.ComponentDiscoveryService"
-87-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+87-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_App\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
 88            android:directBootAware="true"
 88-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Mane\.gradle\caches\transforms-2\files-2.1\313bceb9c738a0724d876fe1456593c5\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 89            android:exported="false" >
 89-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\Mane\.gradle\caches\transforms-2\files-2.1\580c6395dcaef5e324ba5dc2a3e9488d\firebase-auth-19.2.0\AndroidManifest.xml:35:13-37
 90            <meta-data
-90-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+90-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_App\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 91                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-91-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+91-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_App\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+92-->[:firebase_storage] C:\Users\Mane\Desktop\Elderly_App\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 93            <meta-data
-93-->[:firebase_auth] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+93-->[:firebase_auth] C:\Users\Mane\Desktop\Elderly_App\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 94                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
-94-->[:firebase_auth] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-122
+94-->[:firebase_auth] C:\Users\Mane\Desktop\Elderly_App\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-122
 95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[:firebase_auth] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+95-->[:firebase_auth] C:\Users\Mane\Desktop\Elderly_App\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 96            <meta-data
-96-->[:cloud_firestore] C:\Users\Mane\Desktop\Elderly_Github\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+96-->[:cloud_firestore] C:\Users\Mane\Desktop\Elderly_App\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 97                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
-97-->[:cloud_firestore] C:\Users\Mane\Desktop\Elderly_Github\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-133
+97-->[:cloud_firestore] C:\Users\Mane\Desktop\Elderly_App\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-133
 98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[:cloud_firestore] C:\Users\Mane\Desktop\Elderly_Github\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+98-->[:cloud_firestore] C:\Users\Mane\Desktop\Elderly_App\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 99            <meta-data
-99-->[:firebase_core] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+99-->[:firebase_core] C:\Users\Mane\Desktop\Elderly_App\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 100                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
-100-->[:firebase_core] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-123
+100-->[:firebase_core] C:\Users\Mane\Desktop\Elderly_App\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-123
 101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[:firebase_core] C:\Users\Mane\Desktop\Elderly_Github\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+101-->[:firebase_core] C:\Users\Mane\Desktop\Elderly_App\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 102            <meta-data
 102-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\Mane\.gradle\caches\transforms-2\files-2.1\580c6395dcaef5e324ba5dc2a3e9488d\firebase-auth-19.2.0\AndroidManifest.xml:36:13-38:85
 103                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
@@ -196,21 +196,21 @@
 117        </service>
 118
 119        <provider
-119-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+119-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
 120            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-120-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+120-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
 121            android:authorities="com.saadhaashmi.elderlyapp.flutter.image_provider"
-121-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+121-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
 122            android:exported="false"
-122-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+122-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
 123            android:grantUriPermissions="true" >
-123-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+123-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
 124            <meta-data
-124-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+124-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
 125                android:name="android.support.FILE_PROVIDER_PATHS"
-125-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+125-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
 126                android:resource="@xml/flutter_image_picker_file_paths" />
-126-->[:image_picker] C:\Users\Mane\Desktop\Elderly_Github\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+126-->[:image_picker] C:\Users\Mane\Desktop\Elderly_App\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
 127        </provider>
 128
 129        <activity
