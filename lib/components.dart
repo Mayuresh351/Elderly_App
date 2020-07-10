@@ -1,16 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:elderlyapp/data/userdata.dart';
 import 'package:elderlyapp/screens/accountsettings.dart';
 import 'package:elderlyapp/screens/doctorappointment.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
 import 'package:elderlyapp/screens/medicationpage.dart';
 import 'package:elderlyapp/screens/profilesettings.dart';
+import'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elderlyapp/screens/reminderpage.dart';
-import 'package:elderlyapp/screens/schedulepage.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/rendering.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'screens/homepage.dart';
 import 'screens/prescriptions.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class BottomTabBar extends StatelessWidget {
   @override
@@ -83,7 +86,7 @@ class BottomTabBar extends StatelessWidget {
                     tabIcon: Icons.calendar_today,
                     tabContent: 'Schedule',
                     ontap: () {
-                      Navigator.pushNamed(context, SchedulePage.id);
+                      Navigator.pushNamed(context, MedicineReminder.id);
                       kChosenTab = 3;
                     },
                     color: (kChosenTab == 3)?kWidgetColorlite:kWidgetColor,
@@ -181,6 +184,98 @@ class BottomBar extends StatelessWidget {
                 ]
             )
         )
+    );
+  }
+}
+class HomeNotes extends StatefulWidget {
+  @override
+  _HomeNotesState createState() => _HomeNotesState();
+}
+
+class _HomeNotesState extends State<HomeNotes> {
+
+  Stream<DocumentSnapshot> getNoteStatus() async* {
+    String uid;
+    UserData user = UserData();
+    print('stream');
+    await user.currentUser().then((value) {
+      uid = value.uid;
+    });
+    yield* Firestore.instance.collection('Doctor\'sNote')
+        .document(uid)
+        .snapshots();
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    final orientation = MediaQuery
+        .of(context)
+        .orientation;
+    final size = MediaQuery
+        .of(context)
+        .size;
+    if (Doctor == null) {
+      return Center(child: CircularProgressIndicator());
+    } else {
+      return StreamBuilder(
+          stream: getNoteStatus(), builder: (context, snapshot) {
+        return ListView.builder(
+            itemCount: Doctor.length,
+            itemBuilder: (context, index) {
+              return Container(
+                child: Noteit(note :Note[index],index: index,),
+              );
+            });
+      });
+    }
+  }
+}
+class Noteit extends StatelessWidget {
+  Noteit({this.note,this.index});
+  String note;
+  int index;
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final orientation = MediaQuery.of(context).orientation;
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+      child: Container(
+        width: size.width*0.1,
+        child: Row(
+          children: [
+            Text('${index+1}.',style: TextStyle(
+              fontFamily: 'Ubuntu',
+              fontSize: (orientation == Orientation.landscape)?size.height*0.04:size.width*0.04,
+            ),),
+            SizedBox(
+              width: 10,
+            ),
+            Container(
+              width: size.width*0.7,
+//            child: Text(
+//              '$note',style: TextStyle(
+//              fontFamily: 'Ubuntu',
+//              fontSize: (orientation == Orientation.landscape)?size.height*0.04:size.width*0.04,
+//            ),
+//            ),
+              child:AutoSizeText(
+                '$note',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    color: kTextColor,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500),
+                maxFontSize: 18,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

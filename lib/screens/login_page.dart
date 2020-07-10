@@ -1,6 +1,5 @@
 import 'package:elderlyapp/screens/SignUp_Page.dart';
 import 'package:elderlyapp/screens/homepage.dart';
-import 'package:elderlyapp/screens/schedulepage.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/rendering.dart';

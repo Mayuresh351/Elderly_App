@@ -221,6 +221,25 @@ class UserData{
       return null;
     }
   }
+  Future updateNoteData() async {
+
+    final user = await FirebaseAuth.instance.currentUser();
+    final CollectionReference DoctorNote = Firestore.instance.collection('Doctor\'sNote');
+    return await DoctorNote.document(user.uid).setData({
+      'Notes': Note,
+      'Doctor': Doctor,
+    });
+  }
+  Future getNoteData()async{
+    final user = await FirebaseAuth.instance.currentUser();
+    print(user.uid);
+    final CollectionReference DoctorNote = Firestore.instance.collection('Doctor\'sNote');
+    var Notes = await DoctorNote.document(user.uid).get();
+    if(Notes.data['Doctor']!=null){
+      Note = Notes.data['Notes'];
+      Doctor = Notes.data['Doctor'];
+    }
+  }
 }
 
 class otherUser{
@@ -247,19 +266,6 @@ class otherUser{
 
   //Changed Here 2
 
-  final CollectionReference DoctorNote = Firestore.instance.collection('Doctor\'s Notes');
-
-
-  Future updateNoteData(List<String> note, List<String> doctor) async {
-    final user = await FirebaseAuth.instance.currentUser();
-    return await DoctorNote.document(user.uid).setData({
-      'Notes': note,
-      'Doctors': doctor,
-    });
-  }
-
-
-
 }
 
 class OtherUserData {
@@ -268,22 +274,4 @@ class OtherUserData {
   OtherUserData({this.otherUserUid, this.otherUserName});
 }
 
-//Changed Here
-
-class DoctorNotes extends UserData{
-
-  final CollectionReference DoctorNote = Firestore.instance.collection('Doctor\'s Notes');
-
-}
-
-class DoctorNote{
-
-  String Note;
-  String DoctorName;
-
-  DoctorNote({this.Note, this.DoctorName});
-
-}
-
-//Changed from here 2
 

@@ -8,7 +8,6 @@ import 'package:elderlyapp/screens/homepage.dart';
 import 'package:elderlyapp/screens/medicationpage.dart';
 import 'package:elderlyapp/screens/profilesettings.dart';
 import 'screens/welcomepage.dart';
-import 'screens/schedulepage.dart';
 import 'constants.dart';
 import 'screens/reminderpage.dart';
 import 'screens/doctorappointment.dart';
@@ -37,10 +36,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: RootPage.id,
       routes: {
-        WelcomePage.id:(context)=>WelcomePage(),
         HomePage.id:(context)=>HomePage(),
         MedicationPage.id:(context)=>MedicationPage(),
-        SchedulePage.id:(context)=>SchedulePage(),
         ProfilePage.id:(context)=>ProfilePage(),
         NotesPage.id:(context)=>NotesPage(),
         MedicineReminder.id:(context)=>MedicineReminder(),

@@ -534,7 +534,8 @@ public final class R {
     public static final int launcher_icon=0x7f080001;
   }
   public static final class raw {
-    public static final int sound=0x7f090000;
+    public static final int bestreminder=0x7f090000;
+    public static final int sound=0x7f090001;
   }
   public static final class string {
     public static final int common_google_play_services_enable_button=0x7f0a0000;

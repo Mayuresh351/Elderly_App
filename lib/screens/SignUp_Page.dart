@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elderlyapp/rootpage.dart';
 import 'package:elderlyapp/screens/homepage.dart';
-import 'package:elderlyapp/screens/schedulepage.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/rendering.dart';
@@ -11,8 +10,6 @@ import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:elderlyapp/data/userdata.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 
 
 class SignUpPage extends StatefulWidget {

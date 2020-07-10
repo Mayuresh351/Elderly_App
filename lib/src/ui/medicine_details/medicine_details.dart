@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:elderlyapp/src/models/medicine.dart';
 import 'package:provider/provider.dart';
-import 'package:elderlyapp/screens/reminderpage.dart';
 import 'package:elderlyapp/constants.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 import '../../global_bloc.dart';
 
@@ -27,7 +25,7 @@ class MedicineDetails extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-          "Mediminder Details",
+          "Reminder Details",
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -63,7 +61,7 @@ class MedicineDetails extends StatelessWidget {
                     },
                     child: Center(
                       child: Text(
-                        "Delete Mediminder",
+                        "Delete Reiminder",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 22,
@@ -93,7 +91,6 @@ class MedicineDetails extends StatelessWidget {
             ),
             contentPadding: EdgeInsets.only(top: 10.0),
             content: Container(
-              width: 300.0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -103,7 +100,7 @@ class MedicineDetails extends StatelessWidget {
                     padding: EdgeInsets.all(18),
                     child: Center(
                       child: Text(
-                        "Delete this Mediminder?",
+                        "Delete this Reminder?",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
@@ -116,16 +113,12 @@ class MedicineDetails extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           _globalBloc.removeMedicine(medicine);
-//                          Navigator.popUntil(
-//                            context,
-//                            ModalRoute.withName(MedicineReminder.id),
-//                          );
                         Navigator.pop(context);
                         Navigator.pop(context);
                         },
                         child: InkWell(
                           child: Container(
-                            width: MediaQuery.of(context).size.width /3.2,
+                            width: MediaQuery.of(context).size.width*0.35,
                             padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                             decoration: BoxDecoration(
                               color: Color(0xFF3EB16F),
@@ -150,7 +143,7 @@ class MedicineDetails extends StatelessWidget {
                         },
                         child: InkWell(
                           child: Container(
-                            width: MediaQuery.of(context).size.width /3.2,
+                            width: MediaQuery.of(context).size.width*0.35,
                             padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                             decoration: BoxDecoration(
                               color: Colors.red[700],
@@ -177,8 +170,6 @@ class MedicineDetails extends StatelessWidget {
         });
   }
 }
-// _globalBloc.removeMedicine(medicine);
-//                       Navigator.of(context).pop()
 
 class MainSection extends StatelessWidget {
   final Medicine medicine;
@@ -258,12 +249,12 @@ class MainSection extends StatelessWidget {
                   ),
                 ),
               ),
-              MainInfoTab(
-                fieldTitle: "Dosage",
-                fieldInfo: medicine.dosage == 0
-                    ? "Not Specified"
-                    : medicine.dosage.toString() + " mg",
-              )
+//              MainInfoTab(
+//                fieldTitle: "Dosage",
+//                fieldInfo: medicine.dosage == 0
+//                    ? "Not Specified"
+//                    : medicine.dosage.toString() + " mg",
+//              )
             ],
           )
         ],

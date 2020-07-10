@@ -6,12 +6,12 @@ import 'package:elderlyapp/src/ui/new_entry/new_entry.dart';
 import 'package:provider/provider.dart';
 import 'package:elderlyapp/constants.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage2 extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePage2State createState() => _HomePage2State();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePage2State extends State<HomePage2> {
   void initState() {
     super.initState();
   }

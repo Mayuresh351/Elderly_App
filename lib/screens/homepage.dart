@@ -1,10 +1,10 @@
 import 'package:elderlyapp/data/userdata.dart';
 import 'package:elderlyapp/screens/accountsettings.dart';
+import 'package:elderlyapp/screens/doctorappointment.dart';
 import 'package:elderlyapp/screens/doctornotespage.dart';
 import 'package:elderlyapp/screens/medicationpage.dart';
 import 'package:elderlyapp/screens/profilesettings.dart';
 import 'package:elderlyapp/screens/reminderpage.dart';
-import 'package:elderlyapp/screens/schedulepage.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/constants.dart';
 import 'package:flutter/rendering.dart';
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     print(UserData.signout);
-    widget.user.currentUser().then((value) {
+    widget.user.currentUser().then((value) async{
       if(value == null){
         onSignedOut();
       }
@@ -97,6 +97,18 @@ class _HomePageState extends State<HomePage> {
       if(UserData.signout == true){
         UserData.signout = false;
         onSignedOut();
+      }
+      else{
+        await widget.user.getNoteData();
+        await widget.user.getImageNo().then((value) {
+          count = value;
+          print(count);
+          print('yo');
+        });
+        await widget.user.getImageList().then((value) {
+          imgList = value;
+          print(imgList);
+        });
       }
     });
   }
@@ -220,17 +232,21 @@ class _HomePageState extends State<HomePage> {
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(30.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            child: ListView(
+//                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
                                   "Doctor's Notes",
                                   style: TextStyle(
                                       fontFamily: 'Ubuntu',
                                       color: kTextColor,
-                                      fontSize: size.height * 0.02,
+                                      fontSize: (orientation == Orientation.landscape)?size.width*0.025:size.height * 0.025,
                                       fontWeight: FontWeight.w500),
                                 ),
+                                Container(
+                                  height: size.height*0.23,
+                                  child: HomeNotes(),
+                                )
                               ],
                             ),
                           ),
@@ -269,7 +285,7 @@ class _HomePageState extends State<HomePage> {
                                   style: TextStyle(
                                       fontFamily: 'Ubuntu',
                                       color: kTextColor,
-                                      fontSize: size.height * 0.02,
+                                      fontSize: (orientation == Orientation.landscape)?size.width*0.02:size.height * 0.02,
                                       fontWeight: FontWeight.w500),
                                 ),
                               ],
@@ -279,7 +295,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pushNamed(context, MedicationPage.id);
+                      Navigator.pushNamed(context, MedicineReminder.id);
+                      kChosenTab = 2;
                     },
                   ),
                   GestureDetector(
@@ -310,7 +327,7 @@ class _HomePageState extends State<HomePage> {
                                   style: TextStyle(
                                       fontFamily: 'Ubuntu',
                                       color: kTextColor,
-                                      fontSize: size.height * 0.02,
+                                      fontSize: (orientation == Orientation.landscape)?size.width*0.02:size.height * 0.02,
                                       fontWeight: FontWeight.w500),
                                 ),
                               ],
@@ -320,7 +337,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pushNamed(context, SchedulePage.id);
+                      Navigator.pushNamed(context, DoctorApptPage.id);
+                      kChosenTab = 3;
                     },
                   ),
                 ],

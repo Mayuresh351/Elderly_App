@@ -26,7 +26,7 @@ class _MedicineReminderState extends State<MedicineReminder> {
           primarySwatch: Colors.purple,
           brightness: Brightness.light,
         ),
-        home: HomePage(),
+        home: HomePage2(),
         debugShowCheckedModeBanner: false,
       ),
     );

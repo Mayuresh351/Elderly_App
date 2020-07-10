@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:typed_data';
+import 'package:elderlyapp/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:elderlyapp/src/common/convert_time.dart';
 import 'package:elderlyapp/src/global_bloc.dart';
@@ -11,7 +12,9 @@ import 'package:elderlyapp/src/ui/new_entry/new_entry_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:elderlyapp/components.dart';
-
+import 'dart:io';
+import 'package:flutter/services.dart';
+import 'package:elderlyapp/screens/homepage.dart';
 
 class NewEntry extends StatefulWidget {
   @override
@@ -30,7 +33,6 @@ class _NewEntryState extends State<NewEntry> {
   void dispose() {
     super.dispose();
     nameController.dispose();
-    dosageController.dispose();
     _newEntryBloc.dispose();
   }
 
@@ -38,7 +40,6 @@ class _NewEntryState extends State<NewEntry> {
     super.initState();
     _newEntryBloc = NewEntryBloc();
     nameController = TextEditingController();
-    dosageController = TextEditingController();
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     _scaffoldKey = GlobalKey<ScaffoldState>();
     initializeNotifications();
@@ -48,22 +49,20 @@ class _NewEntryState extends State<NewEntry> {
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
-    final size = MediaQuery.of(context).size;
-    final orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       key: _scaffoldKey,
       resizeToAvoidBottomPadding: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: kWidgetColor,
         iconTheme: IconThemeData(
           color: kWidgetColor,
         ),
         centerTitle: true,
         title: Text(
-          "Add New Mediminder",
+          "Add New Reminder",
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 18,
           ),
         ),
@@ -87,21 +86,6 @@ class _NewEntryState extends State<NewEntry> {
                   fontSize: 16,
                 ),
                 controller: nameController,
-                textCapitalization: TextCapitalization.words,
-                decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
-                ),
-              ),
-              PanelTitle(
-                title: "Dosage in mg",
-                isRequired: false,
-              ),
-              TextFormField(
-                controller: dosageController,
-                keyboardType: TextInputType.number,
-                style: TextStyle(
-                  fontSize: 16,
-                ),
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
                   border: UnderlineInputBorder(),
@@ -170,89 +154,93 @@ class _NewEntryState extends State<NewEntry> {
               SizedBox(
                 height: 35,
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.height * 0.08,
-                  right: MediaQuery.of(context).size.height * 0.08,
-                ),
-                child: Container(
-                  width: 220,
-                  height: 70,
-                  child: FlatButton(
-                    color: kWidgetColor,
-                    shape: StadiumBorder(),
-                    child: Center(
-                      child: Text(
-                        "Confirm",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
-                        ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.height * 0.01,
+                      right: MediaQuery.of(context).size.height * 0.01,
+                    ),
+                    child: Container(
+                      width: MediaQuery.of(context).size.height * 0.08,
+                      height: MediaQuery.of(context).size.height * 0.08,
+                      child: FlatButton(
+                        color: Colors.red,
+                        shape: CircleBorder(),
+                        child: Icon(Icons.close,size: 45,color: Colors.white,),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                       ),
                     ),
-                    onPressed: () {
-                      String medicineName;
-                      int dosage;
-                      //--------------------Error Checking------------------------
-                      //Had to do error checking in UI
-                      //Due to unoptimized BLoC value-grabbing architecture
-                      if (nameController.text == "") {
-                        _newEntryBloc.submitError(EntryError.NameNull);
-                        return;
-                      }
-                      if (nameController.text != "") {
-                        medicineName = nameController.text;
-                      }
-                      if (dosageController.text == "") {
-                        dosage = 0;
-                      }
-                      if (dosageController.text != "") {
-                        dosage = int.parse(dosageController.text);
-                      }
-                      for (var medicine in _globalBloc.medicineList$.value) {
-                        if (medicineName == medicine.medicineName) {
-                          _newEntryBloc.submitError(EntryError.NameDuplicate);
-                          return;
-                        }
-                      }
-                      if (_newEntryBloc.selectedInterval$.value == 0) {
-                        _newEntryBloc.submitError(EntryError.Interval);
-                        return;
-                      }
-                      if (_newEntryBloc.selectedTimeOfDay$.value == "None") {
-                        _newEntryBloc.submitError(EntryError.StartTime);
-                        return;
-                      }
-                      //---------------------------------------------------------
-                      String medicineType = _newEntryBloc
-                          .selectedMedicineType.value
-                          .toString()
-                          .substring(13);
-                      int interval = _newEntryBloc.selectedInterval$.value;
-                      String startTime = _newEntryBloc.selectedTimeOfDay$.value;
-
-                      List<int> intIDs =
-                          makeIDs(24 / _newEntryBloc.selectedInterval$.value);
-                      List<String> notificationIDs = intIDs
-                          .map((i) => i.toString())
-                          .toList(); //for Shared preference
-
-                      Medicine newEntryMedicine = Medicine(
-                        notificationIDs: notificationIDs,
-                        medicineName: medicineName,
-                        dosage: dosage,
-                        medicineType: medicineType,
-                        interval: interval,
-                        startTime: startTime,
-                      );
-
-                      _globalBloc.updateMedicineList(newEntryMedicine);
-                      scheduleNotification(newEntryMedicine);
-                      Navigator.pop(context);
-                    },
                   ),
-                ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.height * 0.01,
+                      right: MediaQuery.of(context).size.height * 0.01,
+                    ),
+                    child: Container(
+                      width: 70,
+                      height: 70,
+                      child: FlatButton(
+                        color: Colors.green,
+                        shape: CircleBorder(),
+                        child: Icon(Icons.check,size: 45,color: Colors.white,),
+                        onPressed: () {
+                          String medicineName;
+                          int dosage;
+                          if (nameController.text == "") {
+                            _newEntryBloc.submitError(EntryError.NameNull);
+                            return;
+                          }
+                          if (nameController.text != "") {
+                            medicineName = nameController.text;
+                          }
+                          for (var medicine in _globalBloc.medicineList$.value) {
+                            if (medicineName == medicine.medicineName) {
+                              _newEntryBloc.submitError(EntryError.NameDuplicate);
+                              return;
+                            }
+                          }
+                          if (_newEntryBloc.selectedInterval$.value == 0) {
+                            _newEntryBloc.submitError(EntryError.Interval);
+                            return;
+                          }
+                          if (_newEntryBloc.selectedTimeOfDay$.value == "None") {
+                            _newEntryBloc.submitError(EntryError.StartTime);
+                            return;
+                          }
+                          String medicineType = _newEntryBloc
+                              .selectedMedicineType.value
+                              .toString()
+                              .substring(13);
+                          int interval = _newEntryBloc.selectedInterval$.value;
+                          String startTime = _newEntryBloc.selectedTimeOfDay$.value;
+
+                          List<int> intIDs =
+                          makeIDs(24 / _newEntryBloc.selectedInterval$.value);
+                          List<String> notificationIDs = intIDs
+                              .map((i) => i.toString())
+                              .toList(); //for Shared preference
+
+                          Medicine newEntryMedicine = Medicine(
+                            notificationIDs: notificationIDs,
+                            medicineName: medicineName,
+//                        dosage: dosage,
+                            medicineType: medicineType,
+                            interval: interval,
+                            startTime: startTime,
+                          );
+
+                          _globalBloc.updateMedicineList(newEntryMedicine);
+                          scheduleNotification(newEntryMedicine);
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -270,9 +258,6 @@ class _NewEntryState extends State<NewEntry> {
             break;
           case EntryError.NameDuplicate:
             displayError("Medicine name already exists");
-            break;
-          case EntryError.Dosage:
-            displayError("Please enter the dosage required");
             break;
           case EntryError.Interval:
             displayError("Please select the reminder's interval");
@@ -331,15 +316,16 @@ class _NewEntryState extends State<NewEntry> {
     var minute = int.parse(medicine.startTime[2] + medicine.startTime[3]);
     var vibrationPattern = Int64List(4);
     vibrationPattern[0] = 0;
-    vibrationPattern[0] = 1000;
-    vibrationPattern[0] = 5000;
-    vibrationPattern[0] = 2000;
-    var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+    vibrationPattern[1] = 1000;
+    vibrationPattern[2] = 5000;
+    vibrationPattern[3] = 2000;
+    var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
       'repeatDailyAtTime channel id',
       'repeatDailyAtTime channel name',
       'repeatDailyAtTime description',
       importance: Importance.Max,
-      sound: UriAndroidNotificationSound('sound'),
+      priority: Priority.High,
+      sound: RawResourceAndroidNotificationSound('bestreminder'),
       ledColor: Color(0xFF3EB16F),
       ledOffMs: 1000,
       ledOnMs: 1000,
@@ -356,6 +342,8 @@ class _NewEntryState extends State<NewEntry> {
       } else {
         hour = hour + (medicine.interval * i);
       }
+      print(hour);
+      print(minute);
       await flutterLocalNotificationsPlugin.showDailyAtTime(
           int.parse(medicine.notificationIDs[i]),
           'Elderly: ${medicine.medicineName}',
@@ -363,7 +351,8 @@ class _NewEntryState extends State<NewEntry> {
               ? 'It is time to take your ${medicine.medicineType.toLowerCase()}, according to schedule'
               : 'It is time to take your medicine, according to schedule',
           Time(hour, minute, 0),
-          platformChannelSpecifics);
+          platformChannelSpecifics,
+      payload: 'Custom_Sound');
       hour = ogValue;
     }
     //await flutterLocalNotificationsPlugin.cancelAll();
@@ -511,7 +500,6 @@ class MedicineTypeColumn extends StatelessWidget {
   final String name;
   final int iconValue;
   final bool isSelected;
-  Color kWidgetColor = Color(0xFF65376A);
 
   MedicineTypeColumn(
       {Key key,
@@ -536,7 +524,7 @@ class MedicineTypeColumn extends StatelessWidget {
             width: (orientation == Orientation.landscape)?size.height*0.20:size.width*0.20,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: isSelected ? kWidgetColor : Colors.white,
+              color: isSelected ? kOrangeColor : Colors.white,
             ),
             child: Center(
               child: Padding(
@@ -544,7 +532,7 @@ class MedicineTypeColumn extends StatelessWidget {
                 child: Icon(
                   IconData(iconValue, fontFamily: "Ic"),
                   size: 75,
-                  color: isSelected ? Colors.white : kWidgetColor,
+                  color: isSelected ? Colors.white : kOrangeColor,
                 ),
               ),
             ),
@@ -555,7 +543,7 @@ class MedicineTypeColumn extends StatelessWidget {
               width: (orientation == Orientation.landscape)?size.height*0.20:size.width*0.20,
               height: 30,
               decoration: BoxDecoration(
-                color: isSelected ? kWidgetColor : Colors.transparent,
+                color: isSelected ? kOrangeColor : Colors.transparent,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
@@ -563,7 +551,7 @@ class MedicineTypeColumn extends StatelessWidget {
                   name,
                   style: TextStyle(
                     fontSize: 16,
-                    color: isSelected ? Colors.white : kWidgetColor,
+                    color: isSelected ? Colors.white : kOrangeColor,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -598,7 +586,7 @@ class PanelTitle extends StatelessWidget {
           ),
           TextSpan(
             text: isRequired ? " *" : "",
-            style: TextStyle(fontSize: 14, color: Color(0xFF3EB16F)),
+            style: TextStyle(fontSize: 14, color: Colors.red),
           ),
         ]),
       ),

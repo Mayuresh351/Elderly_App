@@ -18,6 +18,8 @@ int count = 0;
 int count2 = 0;
 List<dynamic> imgList = [];
 Map<int,Uint8List> imageData = {};
+List<dynamic> Note;
+List<dynamic> Doctor;
 List<int>  requestedindexes = [];
 
 const kTextFieldDecoration = InputDecoration(
